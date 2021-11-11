@@ -1,0 +1,43 @@
+/* @value colors: "./variables.css";
+@value customGree, customYellow from colors; */
+
+@import "../../assets/variables";
+
+.wrapper-header {
+  height: 100px;
+  width: 100%;
+  background-color: $customBlue;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    margin: auto;
+
+    .wrapper-btn {
+      .btn {
+        color: rgba(255, 69, 0, 1);
+        border: none;
+        background-color: $customBlue;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .btnLogIn {
+        font-size: 1rem;
+      }
+
+      .btnSignUp {
+        // background-color: $customYellow;
+        // color: white;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.search {
+  background-color: aquamarine;
+}

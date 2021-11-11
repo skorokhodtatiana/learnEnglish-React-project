@@ -1,8 +1,9 @@
-import "./assets/App.css";
-import Header from "./components/Header";
-import logo from "./assets/images/logo.png";
-import TopicCard from "./components/TopicCards";
-import FleshCard from "./components/FleshCards";
+import "./assets/App.scss";
+import Header from "./components/header/Header";
+import logo from "./components/header/logo.png";
+import TopicCard from "./components/topicCard/TopicCard";
+import FleshCard from "./components/fleshCard/FleshCard";
+import "font-awesome/css/font-awesome.min.css";
 
 function App() {
   return (
