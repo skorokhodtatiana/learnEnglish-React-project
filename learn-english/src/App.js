@@ -1,9 +1,10 @@
 import "./assets/App.scss";
 import Header from "./components/header/Header";
-import logo from "./components/header/logo.png";
+import logo from "./assets/images/logo.png";
+import "font-awesome/css/font-awesome.min.css";
 import TopicCard from "./components/topicCard/TopicCard";
 import FleshCard from "./components/fleshCard/FleshCard";
-import "font-awesome/css/font-awesome.min.css";
+// import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header logo={logo}></Header>
       <TopicCard></TopicCard>
       <FleshCard></FleshCard>
+      {/* <Footer></Footer> */}
     </div>
   );
 }

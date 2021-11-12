@@ -17,27 +17,43 @@
     height: 100px;
     margin: auto;
 
+    .img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
     .wrapper-btn {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 20%;
+
       .btn {
-        color: rgba(255, 69, 0, 1);
+        color: $customGray;
         border: none;
         background-color: $customBlue;
         font-size: 1rem;
         font-weight: bold;
-      }
-      .btnLogIn {
-        font-size: 1rem;
-      }
 
-      .btnSignUp {
-        // background-color: $customYellow;
-        // color: white;
-        font-size: 1rem;
+        &:hover {
+          // color: #1691bb;
+          color: rgba(255, 69, 0, 1);
+        }
       }
+      // .btnLogIn {
+      //   font-size: 1rem;
+      // }
+
+      // .btnSignUp {
+      //   // background-color: $customYellow;
+      //   // color: white;
+      //   font-size: 1rem;
+      // }
     }
   }
 }
 
 .search {
-  background-color: aquamarine;
+  background-color: $customBlue;
+  font-size: 1.5rem;
 }
