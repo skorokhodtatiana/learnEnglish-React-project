@@ -4,7 +4,7 @@ import logo from "./assets/images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
 import TopicCard from "./components/topicCard/TopicCard";
 import FleshCard from "./components/fleshCard/FleshCard";
-// import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Header logo={logo}></Header>
       <TopicCard></TopicCard>
       <FleshCard></FleshCard>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 }

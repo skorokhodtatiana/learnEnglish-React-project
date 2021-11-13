@@ -1,0 +1,118 @@
+@import "../../assets/variables";
+
+.wrapper-footer {
+  height: 99.5vh;
+  width: 100%;
+  background-color: $customBlue;
+
+  .footer {
+    width: 70%;
+    margin: auto;
+    // background-color: $customBlue;
+
+    .footer__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      // width: 70%;
+      margin: auto;
+      // background-color: red;
+
+      .footer__logo {
+        height: 30vh;
+
+        .logo {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      .footer__socialMedia {
+        background-color: $customBlue;
+        color: $customGray;
+
+        .iconInstagram {
+          &:hover {
+            background-color: $customOrange;
+            border: 1px solid $customOrange;
+            border-radius: 20%;
+          }
+        }
+        .iconFacebook {
+          margin-left: 5px;
+
+          &:hover {
+            background-color: $customOrange;
+            border: 1px solid $customOrange;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    .footer__nav {
+      height: 30vh;
+      .footer__wrapper-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+        height: 10vh;
+        margin: auto;
+        color: $customGray;
+
+        .footer__card {
+          width: 80px;
+          height: 25px;
+          text-align: center;
+          line-height: 25px;
+          text-decoration: none;
+          color: $customGray;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+
+        .card-food {
+          background-color: #6a438a;
+        }
+
+        .card-family {
+          background-color: #cd3939;
+        }
+        .card-animal {
+          background-color: #e36334;
+        }
+        .card-travel {
+          background-color: #c7bd5d;
+        }
+        .card-work {
+          background-color: #34945f;
+        }
+        .card-nature {
+          background-color: #4d869a;
+        }
+      }
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 50%;
+      height: 10vh;
+      margin: auto;
+      color: $customGray;
+      .item-menu {
+        text-decoration: none;
+        color: $customGray;
+
+        &:hover {
+          color: $customOrange;
+        }
+      }
+    }
+  }
+}
