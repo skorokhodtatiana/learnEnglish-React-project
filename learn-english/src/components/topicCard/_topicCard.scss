@@ -1,0 +1,13 @@
+@import "../../assets/variables";
+
+.topicCard {
+  width: 20rem;
+  height: 20rem;
+  margin-top: 3rem;
+  background-color: blanchedalmond;
+
+  .topicCard__picture {
+    width: 14rem;
+    margin: auto;
+  }
+}

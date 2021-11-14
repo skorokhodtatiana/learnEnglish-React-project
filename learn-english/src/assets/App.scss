@@ -4,4 +4,44 @@
 .App {
   width: 100%;
   height: 100%;
+  background-color: $customOrange;
+
+  .topicCard-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+
+    .topic-picture {
+      width: 6rem;
+      height: 6rem;
+      margin: auto;
+    }
+
+    .food-purple {
+      color: #6a438a;
+    }
+
+    .family-red {
+      color: #cd3939;
+    }
+
+    .animal-orange {
+      color: #e36334;
+    }
+
+    .travel-yellow {
+      color: #c7bd5d;
+    }
+
+    .work-green {
+      color: #34945f;
+    }
+
+    .nature-blue {
+      color: #4d869a;
+    }
+  }
 }

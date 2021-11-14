@@ -1,12 +1,12 @@
 @import "../../assets/variables";
 
 .wrapper-footer {
-  height: 99.5vh;
+  height: 60.5vh;
   width: 100%;
   background-color: $customBlue;
 
   .footer {
-    width: 70%;
+    width: 80%;
     margin: auto;
     // background-color: $customBlue;
 
@@ -63,10 +63,10 @@
         color: $customGray;
 
         .footer__card {
-          width: 80px;
-          height: 25px;
+          width: 5rem;
+          height: 1.5rem;
           text-align: center;
-          line-height: 25px;
+          line-height: 1.5rem;
           text-decoration: none;
           color: $customGray;
 
@@ -78,7 +78,6 @@
         .card-food {
           background-color: #6a438a;
         }
-
         .card-family {
           background-color: #cd3939;
         }
