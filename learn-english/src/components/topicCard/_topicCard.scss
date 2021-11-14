@@ -1,13 +1,44 @@
 @import "../../assets/variables";
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap");
 
 .topicCard {
   width: 20rem;
   height: 20rem;
   margin-top: 3rem;
   background-color: blanchedalmond;
+  font-family: "Source Code Pro", monospace;
+  font-weight: bold;
+  color: $customGray;
 
   .topicCard__picture {
     width: 14rem;
     margin: auto;
+  }
+
+  .topicCard__name {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+  }
+
+  .textCard {
+    text-align: center;
+  }
+
+  .topicCard__btnOpen {
+    display: block;
+    width: 10rem;
+    height: 2.5rem;
+    margin-top: 5rem;
+    background-color: $customOrange;
+    border: 1px solid $customOrange;
+    border-radius: 5%;
+    margin: 4rem auto 2rem auto;
+    color: $customGray;
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
