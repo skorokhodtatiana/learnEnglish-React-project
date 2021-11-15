@@ -61,6 +61,38 @@ const topicCards = [
   { id: 6, image: nature, nameCard: "Nature", size: 5 },
 ];
 
+const animalWords = [
+  {
+    id: "1",
+    englishWord: "butterfly",
+    transcription: "[ ˈbʌtəflaɪ ]",
+    russian: "бабочка",
+  },
+  {
+    id: "2",
+    englishWord: "hedgehog",
+    transcription: "[ ˈhedʒhɒɡ ]",
+    russianWord: "еж",
+  },
+  {
+    id: "3",
+    englishWord: "unicorn",
+    transcription: "[ˈyo͞onəˌkôrn]",
+    russianWord: "единорог",
+  },
+  {
+    id: "4",
+    englishWord: "cow",
+    transcription: " [kaʊ]",
+    russianWord: "корова",
+  },
+  {
+    id: "5",
+    englishWord: "tiger",
+    transcription: "[ˈtaɪgə]",
+    russianWord: "тигр",
+  },
+];
 function App() {
   return (
     <div className="App">
@@ -75,7 +107,17 @@ function App() {
           ></TopicCard>
         ))}
       </div>
-      <FleshCard></FleshCard>
+      <div className="topicCard-wrapper">
+        {animalWords.map((animal, id) => (
+          <FleshCard
+            key={animal.id}
+            englishWord={animal.englishWord}
+            transcription={animal.transcription}
+            russianWord={animal.russianWord}
+          ></FleshCard>
+        ))}
+      </div>
+
       <Footer></Footer>
     </div>
   );

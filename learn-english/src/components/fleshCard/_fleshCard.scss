@@ -1,0 +1,11 @@
+@import "../../assets/variables";
+
+.fleshCard {
+  width: 15rem;
+  height: 20rem;
+  margin-top: 3rem;
+  background-color: blanchedalmond;
+  font-family: "Source Code Pro", monospace;
+  font-weight: bold;
+  color: $customGray;
+}

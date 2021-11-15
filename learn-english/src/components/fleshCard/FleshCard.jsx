@@ -1,9 +1,11 @@
 const FleshCard = (props) => {
-  const { image, nameCard } = props;
+  const { englishWord, transcription, russianWord } = props;
   return (
-    <div>
-      <img src={image} alt={nameCard}></img>
-      <div>{nameCard}</div>
+    <div className="fleshCard">
+      <div>{englishWord}</div>
+      <div>{transcription}</div>
+      <div>{russianWord}</div>
+      <button>Перевод</button>
     </div>
   );
 };
