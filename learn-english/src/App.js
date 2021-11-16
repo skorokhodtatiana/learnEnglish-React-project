@@ -66,7 +66,7 @@ const animalWords = [
     id: "1",
     englishWord: "butterfly",
     transcription: "[ ˈbʌtəflaɪ ]",
-    russian: "бабочка",
+    russianWord: "бабочка",
   },
   {
     id: "2",
