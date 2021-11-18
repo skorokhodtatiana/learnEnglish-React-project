@@ -4,6 +4,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -16,8 +17,15 @@ const Footer = () => {
           <div className="footer__pictures"></div>
           <div className="footer__socialMedia">
             Follow us:{" "}
-            <FontAwesomeIcon icon={faInstagram} className="iconInstagram" />
+            <a href="https://www.instagram.com/tanja_skorohod/?hl=ru">
+              {" "}
+              <FontAwesomeIcon icon={faInstagram} className="iconInstagram" />
+            </a>
             <FontAwesomeIcon icon={faFacebook} className="iconFacebook" />
+            <a href="mailto:tanjakharza@gmail.com">
+              {" "}
+              <FontAwesomeIcon icon={faEnvelope} className="iconEnvelope" />
+            </a>
           </div>
         </header>
         <nav className="footer__nav">

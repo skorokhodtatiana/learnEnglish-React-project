@@ -33,6 +33,12 @@
         color: $customGray;
 
         .iconInstagram {
+          color: $customGray;
+
+          &:active {
+            color: #34945f;
+          }
+
           &:hover {
             background-color: $customOrange;
             border: 1px solid $customOrange;
@@ -42,10 +48,28 @@
         .iconFacebook {
           margin-left: 5px;
 
+          &:active {
+            color: #34945f;
+          }
+
           &:hover {
             background-color: $customOrange;
             border: 1px solid $customOrange;
             border-radius: 50%;
+          }
+        }
+
+        .iconEnvelope {
+          color: $customGray;
+
+          &:active {
+            color: #34945f;
+          }
+
+          &:hover {
+            background-color: $customOrange;
+            border: 1px solid $customOrange;
+            border-radius: 5%;
           }
         }
       }

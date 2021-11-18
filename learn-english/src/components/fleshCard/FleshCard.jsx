@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./_fleshCard.scss";
+
 const FleshCard = (props) => {
   const [pressed, setPressed] = useState(false);
   const { englishWord, transcription, russianWord } = props;
@@ -8,12 +10,14 @@ const FleshCard = (props) => {
 
   return (
     <div className="fleshCard">
-      <div>{englishWord}</div>
-      <div>{transcription}</div>
+      <div className="fleshCard__englishWord">{englishWord}</div>
+      <div className="fleshCard__transcription">{transcription}</div>
       {pressed ? (
-        <div>{russianWord}</div>
+        <div className="fleshCard__russianhWord">{russianWord}</div>
       ) : (
-        <button onClick={handlePressed}>Перевод</button>
+        <button className="fleshCard__btnOpen" onClick={handlePressed}>
+          Перевод
+        </button>
       )}
     </div>
   );

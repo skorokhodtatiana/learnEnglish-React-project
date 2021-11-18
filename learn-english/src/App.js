@@ -3,7 +3,7 @@ import Header from "./components/header/Header";
 import logo from "./assets/images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
 import TopicCard from "./components/topicCard/TopicCard";
-import FleshCard from "./components/fleshCard/FleshCard";
+
 import Footer from "./components/footer/Footer";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,38 +61,6 @@ const topicCards = [
   { id: 6, image: nature, nameCard: "Nature", size: 5 },
 ];
 
-const animalWords = [
-  {
-    id: "1",
-    englishWord: "butterfly",
-    transcription: "[ ˈbʌtəflaɪ ]",
-    russianWord: "бабочка",
-  },
-  {
-    id: "2",
-    englishWord: "hedgehog",
-    transcription: "[ ˈhedʒhɒɡ ]",
-    russianWord: "еж",
-  },
-  {
-    id: "3",
-    englishWord: "unicorn",
-    transcription: "[ˈyo͞onəˌkôrn]",
-    russianWord: "единорог",
-  },
-  {
-    id: "4",
-    englishWord: "cow",
-    transcription: " [kaʊ]",
-    russianWord: "корова",
-  },
-  {
-    id: "5",
-    englishWord: "tiger",
-    transcription: "[ˈtaɪgə]",
-    russianWord: "тигр",
-  },
-];
 function App() {
   return (
     <div className="App">
@@ -105,16 +73,6 @@ function App() {
             nameCard={card.nameCard}
             size={"(" + card.size + " cards)"}
           ></TopicCard>
-        ))}
-      </div>
-      <div className="topicCard-wrapper">
-        {animalWords.map((animal, id) => (
-          <FleshCard
-            key={animal.id}
-            englishWord={animal.englishWord}
-            transcription={animal.transcription}
-            russianWord={animal.russianWord}
-          ></FleshCard>
         ))}
       </div>
 
