@@ -8,30 +8,35 @@ const animalWords = [
     englishWord: "butterfly",
     transcription: "[ ˈbʌtəflaɪ ]",
     russianWord: "бабочка",
+    topic: "animal",
   },
   {
     id: "2",
     englishWord: "hedgehog",
     transcription: "[ ˈhedʒhɒɡ ]",
     russianWord: "еж",
+    topic: "animal",
   },
   {
     id: "3",
     englishWord: "unicorn",
     transcription: "[ˈyo͞onəˌkôrn]",
     russianWord: "единорог",
+    topic: "animal",
   },
   {
     id: "4",
     englishWord: "cow",
     transcription: " [kaʊ]",
     russianWord: "корова",
+    topic: "animal",
   },
   {
     id: "5",
     englishWord: "tiger",
     transcription: "[ˈtaɪgə]",
     russianWord: "тигр",
+    topic: "animal",
   },
 ];
 

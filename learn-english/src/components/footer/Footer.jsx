@@ -66,6 +66,10 @@ const Footer = () => {
               Contact
             </a>
           </section>
+          <section className="footer__btn">
+            <button className="footer__btnSearch">Browse or Search</button>
+            <button className="footer__btnCreate">Create Flashcard</button>
+          </section>
         </nav>
       </div>
     </div>
