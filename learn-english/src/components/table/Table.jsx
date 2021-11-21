@@ -1,18 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
+import "./_table.scss";
 
 const Table = (props) => {
   const { id, englishWord, transcription, russianWord, topic } = props;
   return (
-    <table
-      style={{
-        borderWidth: "1px",
-        borderColor: "#000",
-        borderStyle: "solid",
-      }}
-    >
-      <thead>
+    <table className="table">
+      {/* <thead>
         <tr>
           <th>#</th>
           <th>english word</th>
@@ -20,8 +15,8 @@ const Table = (props) => {
           <th>russian word</th>
           <th>topic</th>
           <th></th>
-        </tr>
-        {/* <tr>
+        </tr> */}
+      {/* <tr>
           <td></td>
           <td>
             <form action="#">
@@ -40,7 +35,7 @@ const Table = (props) => {
           </td>
           <td></td>
         </tr> */}
-      </thead>
+      {/* </thead> */}
       <tbody>
         <tr>
           <td>{id}</td>

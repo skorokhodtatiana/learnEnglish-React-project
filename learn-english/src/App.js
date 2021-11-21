@@ -128,12 +128,10 @@ function App() {
     topCards.isChosenTable = true;
   };
 
-  const hiddenCards = isChosenTable ? "isNone" : "";
-
   return (
     <div className="App">
       <Header logo={logo}></Header>
-      <div className={"topicCard-wrapper" + hiddenCards}>
+      <div className="topicCard-wrapper">
         {!isTopicChosen &&
           topicCards.map((card, id) => (
             <TopicCard
