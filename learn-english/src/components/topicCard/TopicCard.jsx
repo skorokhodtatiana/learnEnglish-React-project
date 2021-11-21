@@ -1,70 +1,43 @@
-import React, { useState } from "react";
-import FleshCard from "../fleshCard/FleshCard";
+// import React, { useState } from "react";
+import FlashCard from "../flashCard/FlashCard";
 import "./_topicCard.scss";
-
-const animalWords = [
-  {
-    id: "1",
-    englishWord: "butterfly",
-    transcription: "[ ˈbʌtəflaɪ ]",
-    russianWord: "бабочка",
-    topic: "animal",
-  },
-  {
-    id: "2",
-    englishWord: "hedgehog",
-    transcription: "[ ˈhedʒhɒɡ ]",
-    russianWord: "еж",
-    topic: "animal",
-  },
-  {
-    id: "3",
-    englishWord: "unicorn",
-    transcription: "[ˈyo͞onəˌkôrn]",
-    russianWord: "единорог",
-    topic: "animal",
-  },
-  {
-    id: "4",
-    englishWord: "cow",
-    transcription: " [kaʊ]",
-    russianWord: "корова",
-    topic: "animal",
-  },
-  {
-    id: "5",
-    englishWord: "tiger",
-    transcription: "[ˈtaɪgə]",
-    russianWord: "тигр",
-    topic: "animal",
-  },
-];
+import dataCards from "../../assets/DataCards.js";
+//import * as classnames from "classnames";
+// let classNames = require("classnames");
 
 const TopicCard = (props) => {
   const { id, image, nameCard, size } = props;
 
-  const [isOpen, setOpen] = useState(false);
-  const [isHidden, setHidden] = useState(false);
-
-  const openTopicCard = () => {
-    setOpen(!isOpen);
-
-    setHidden(!isHidden);
+  const openTopicCard = (id) => {
+    props.onClickTopic(id);
   };
 
-  const showTopicCards = isHidden ? "isNone" : " ";
+  const showTopicCards = props.isChosen ? "isNone" : " ";
+  console.log(props.isChosenTable);
+  const showTable = props.isChosenTable ? "isNone" : " ";
+  console.log(props.isChosenTable);
+
+  // const classNameTopicCard = classNames("topicCard", {
+  //   isNone: props.isChosenTable && props.isChosen,
+  // });
+
   return (
-    <div className={"topicCard" + showTopicCards} id={id}>
-      {isOpen ? (
-        <div className="topicCard-wrapper">
-          {animalWords.map((animal, id) => (
-            <FleshCard
-              key={animal.id}
-              englishWord={animal.englishWord}
-              transcription={animal.transcription}
-              russianWord={animal.russianWord}
-            ></FleshCard>
-          ))}
+    <div className={"topicCard" + showTopicCards + showTable}>
+      {props.isChosen ? (
+        <div>
+          <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
+          <div className="topicCard-wrapper">
+            {dataCards
+              .filter((word) => word.topic === props.nameCard)
+              .map((animal, id) => (
+                <FlashCard
+                  key={id}
+                  englishWord={animal.englishWord}
+                  transcription={animal.transcription}
+                  russianWord={animal.russianWord}
+                ></FlashCard>
+              ))}
+          </div>
         </div>
       ) : (
         <div>
@@ -72,8 +45,9 @@ const TopicCard = (props) => {
           <div className={"topicCard__name textCard"}>{nameCard}</div>
           <div className="textCard">{size}</div>
           <button
+            id={id}
             onClick={() => {
-              openTopicCard();
+              openTopicCard(id);
             }}
             className="topicCard__btnOpen"
           >

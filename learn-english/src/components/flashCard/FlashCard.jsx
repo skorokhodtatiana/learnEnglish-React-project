@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./_fleshCard.scss";
+import "./_flashCard.scss";
 
-const FleshCard = (props) => {
+const FlashCard = (props) => {
   const [pressed, setPressed] = useState(false);
   const { englishWord, transcription, russianWord } = props;
   const handlePressed = () => {
@@ -23,4 +23,4 @@ const FleshCard = (props) => {
   );
 };
 
-export default FleshCard;
+export default FlashCard;

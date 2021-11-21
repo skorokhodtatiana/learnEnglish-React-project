@@ -6,7 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-const Footer = () => {
+const Footer = (props) => {
+  // const {} = props;
+  const openTable = () => {
+    console.log("Работает");
+    props.onClickButtonTable();
+  };
+
   return (
     <div className="wrapper-footer">
       <div className="footer">
@@ -67,7 +73,9 @@ const Footer = () => {
             </a>
           </section>
           <section className="footer__btn">
-            <button className="footer__btnSearch">Browse or Search</button>
+            <button onClick={openTable} className="footer__btnSearch">
+              Browse or Search
+            </button>
             <button className="footer__btnCreate">Create Flashcard</button>
           </section>
         </nav>
