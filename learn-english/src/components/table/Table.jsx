@@ -5,7 +5,13 @@ import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 const Table = (props) => {
   const { id, englishWord, transcription, russianWord, topic } = props;
   return (
-    <table>
+    <table
+      style={{
+        borderWidth: "1px",
+        borderColor: "#000",
+        borderStyle: "solid",
+      }}
+    >
       <thead>
         <tr>
           <th>#</th>
@@ -15,25 +21,25 @@ const Table = (props) => {
           <th>topic</th>
           <th></th>
         </tr>
-        <tr>
+        {/* <tr>
           <td></td>
           <td>
-            <form>
+            <form action="#">
               <input type="text" placeholder="english word"></input>
             </form>
           </td>
           <td>
-            <form>
+            <form action="#">
               <input type="text" placeholder="transcription"></input>
             </form>
           </td>
           <td>
-            <form>
+            <form action="#">
               <input type="text" placeholder="russian word"></input>
             </form>
           </td>
           <td></td>
-        </tr>
+        </tr> */}
       </thead>
       <tbody>
         <tr>
