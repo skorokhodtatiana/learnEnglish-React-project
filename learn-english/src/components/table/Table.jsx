@@ -44,6 +44,10 @@ const Table = (props) => {
     console.log(e.target.value);
   };
 
+  const cancelChanges = () => {
+    setselectEdit(false);
+  };
+
   return (
     <table className="table">
       <HeadTable></HeadTable>
@@ -87,7 +91,7 @@ const Table = (props) => {
             <td>
               <button>Save</button>
               {/* <button onClick={() => saveChanges()}>Save</button> */}
-              <button>Cancel hange</button>
+              <button onClick={() => cancelChanges()}>Cancel change</button>
             </td>
           </tr>
         ) : (

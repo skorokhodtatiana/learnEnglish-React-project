@@ -9,7 +9,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const Footer = (props) => {
   // const {} = props;
   const openTable = () => {
-    console.log("Работает");
     props.onClickButtonTable();
   };
 

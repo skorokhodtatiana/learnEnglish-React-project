@@ -126,6 +126,7 @@ function App() {
     setisButtonClick(!false);
     setisChosenTable(!false);
     topCards.isChosenTable = true;
+    console.log(isChosenTable);
   };
 
   return (

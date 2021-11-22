@@ -69,6 +69,34 @@ const dataCards = [
     russianWord: "дочь",
     topic: "Family",
   },
+  {
+    id: "10",
+    englishWord: "apple",
+    transcription: " [aepl]",
+    russianWord: "яблоко",
+    topic: "Food",
+  },
+  {
+    id: "11",
+    englishWord: "meat",
+    transcription: " [mi:t]",
+    russianWord: "мясо",
+    topic: "Food",
+  },
+  {
+    id: "12",
+    englishWord: "fish",
+    transcription: " [fɪʃ]",
+    russianWord: "рыба",
+    topic: "Food",
+  },
+  {
+    id: "13",
+    englishWord: "milk",
+    transcription: " [milk]",
+    russianWord: "молоко",
+    topic: "Food",
+  },
 ];
 
 export default dataCards;
