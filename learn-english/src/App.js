@@ -4,11 +4,10 @@ import logo from "./assets/images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
 import TopicCard from "./components/topicCard/TopicCard";
 import React, { useState } from "react";
-// import dataCards from "./assets/DataCards";
 import dataCards from "./assets/DataCards.js";
 import Footer from "./components/footer/Footer";
+import Table from "./components/table/Table";
 import HeadTable from "./components/table/Table";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHamburger,
@@ -18,7 +17,6 @@ import {
   faBriefcase,
   faTree,
 } from "@fortawesome/free-solid-svg-icons";
-import Table from "./components/table/Table";
 
 const food = (
   <FontAwesomeIcon
@@ -119,15 +117,12 @@ function App() {
     topicCards[id].isChosen = true;
   };
 
-  const [topCards, settopCards] = useState(initCards);
   const [isButtonClick, setisButtonClick] = useState(false);
   const [isChosenTable, setisChosenTable] = useState(false);
 
   const showTable = () => {
     setisButtonClick(!false);
     setisChosenTable(!false);
-    topCards.isChosenTable = true;
-    console.log(isChosenTable);
   };
 
   return (
@@ -159,9 +154,10 @@ function App() {
         )}
 
         {isButtonClick &&
-          dataCards.map((card, id) => (
+          dataCards.map((card) => (
             <Table
               key={card.id}
+              id={card.id}
               englishWord={card.englishWord}
               transcription={card.transcription}
               russianWord={card.russianWord}

@@ -14,10 +14,7 @@ const TopicCard = (props) => {
   };
 
   const showTopicCards = props.isChosen ? "isNone" : " ";
-  console.log(props.isChosen);
   const showTable = props.isChosenTable ? "isNone" : " ";
-  console.log(props.isChosenTable);
-  // console.log(...other);
 
   // const classNameTopicCard = classNames("topicCard", {
   //   isNone: props.isChosenTable && props.isChosen,

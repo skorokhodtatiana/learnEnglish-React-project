@@ -13,20 +13,9 @@ const Table = (props) => {
     setselectEdit(!false);
   };
 
-  // const [changeInput, setchangeInput] = useState(props);
-
-  // const saveChanges = (e) => {
-  //   // const handleChange = (e) => {
-  //   //   console.log(e);
-  //   // };
-  //   setchangeInput(e.target.value);
-  //   console.log(e.target.value);
-  // };
-
   const [changeInputEngWord, setchangeInputEngWord] = useState(props);
   const handleChange = (e) => {
     setchangeInputEngWord(e.target.value);
-    // console.log(e.target.value);
     const newWord = { id: { id }, englishWord: { changeInputEngWord } };
     const newArr = dataCards.push(newWord);
     console.log(newArr);

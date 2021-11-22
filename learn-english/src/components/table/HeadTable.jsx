@@ -1,4 +1,4 @@
-const HeadTable = (props) => {
+const HeadTable = () => {
   return (
     <thead>
       <tr>
@@ -12,4 +12,5 @@ const HeadTable = (props) => {
     </thead>
   );
 };
+
 export default HeadTable;
