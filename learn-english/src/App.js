@@ -156,7 +156,7 @@ function App() {
         )}
 
         {isButtonClick &&
-          dataCards.map((card) => (
+          dataCards.map((card, id) => (
             <Table
               key={card.id}
               englishWord={card.englishWord}
