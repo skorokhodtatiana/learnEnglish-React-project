@@ -76,7 +76,7 @@ const Footer = (props) => {
             <button onClick={openTable} className="footer__btnSearch">
               Browse or Search
             </button>
-            <button className="footer__btnCreate">Create Flashcard</button>
+            {/* <button className="footer__btnCreate">Create Flashcard</button> */}
           </section>
         </nav>
       </div>

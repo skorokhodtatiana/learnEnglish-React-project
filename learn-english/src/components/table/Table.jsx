@@ -24,7 +24,6 @@ const Table = (props) => {
   const { id, englishWord, transcription, russianWord, topic } = props;
 
   const [selectEdit, setselectEdit] = useState(false);
-
   const handleClickEdit = () => {
     setselectEdit(!false);
   };
@@ -86,6 +85,7 @@ const Table = (props) => {
               </form>
             </td>
             <td>
+              <button>Save</button>
               {/* <button onClick={() => saveChanges()}>Save</button> */}
               <button>Cancel hange</button>
             </td>
