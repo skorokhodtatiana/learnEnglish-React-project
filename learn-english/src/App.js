@@ -7,6 +7,7 @@ import React, { useState } from "react";
 // import dataCards from "./assets/DataCards";
 import dataCards from "./assets/DataCards.js";
 import Footer from "./components/footer/Footer";
+import HeadTable from "./components/table/Table";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -165,7 +166,9 @@ function App() {
               transcription={card.transcription}
               russianWord={card.russianWord}
               topic={card.topic}
-            ></Table>
+            >
+              <HeadTable></HeadTable>
+            </Table>
           ))}
       </div>
       <Footer onClickButtonTable={() => showTable()}></Footer>

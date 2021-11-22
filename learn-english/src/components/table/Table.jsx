@@ -5,21 +5,6 @@ import "./_table.scss";
 import dataCards from "../../assets/DataCards.js";
 import { useState } from "react";
 
-const HeadTable = () => {
-  return (
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>english word</th>
-        <th>transcription</th>
-        <th>russian word</th>
-        <th>topic</th>
-        <th></th>
-      </tr>
-    </thead>
-  );
-};
-
 const Table = (props) => {
   const { id, englishWord, transcription, russianWord, topic } = props;
 
@@ -54,7 +39,6 @@ const Table = (props) => {
 
   return (
     <table className="table">
-      <HeadTable></HeadTable>
       <tbody>
         {selectEdit ? (
           <tr>
