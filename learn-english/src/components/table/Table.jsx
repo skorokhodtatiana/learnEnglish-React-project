@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./_table.scss";
-// import dataCards from "../../assets/DataCards.js";
+import dataCards from "../../assets/DataCards.js";
 import { useState } from "react";
 
 const HeadTable = () => {
@@ -38,10 +38,14 @@ const Table = (props) => {
   //   console.log(e.target.value);
   // };
 
-  const [changeInput, setchangeInput] = useState(props);
+  const [changeInputEngWord, setchangeInputEngWord] = useState(props);
   const handleChange = (e) => {
-    setchangeInput(e.target.value);
-    console.log(e.target.value);
+    setchangeInputEngWord(e.target.value);
+    // console.log(e.target.value);
+    const newWord = { id: { id }, englishWord: { changeInputEngWord } };
+    const newArr = dataCards.push(newWord);
+    console.log(newArr);
+    console.log(changeInputEngWord);
   };
 
   const cancelChanges = () => {

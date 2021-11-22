@@ -141,6 +141,7 @@ function App() {
               image={card.image}
               nameCard={card.nameCard}
               size={"(" + card.size + " cards)"}
+              isChosenTable={isChosenTable}
               onClickTopic={() => handleClick(id)}
             ></TopicCard>
           ))}
