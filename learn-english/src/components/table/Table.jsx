@@ -28,7 +28,7 @@ const Table = (props) => {
 
   return (
     <table className="table">
-      <tbody>
+      <tbody className="tbody">
         {selectEdit ? (
           <tr>
             <td>{id}</td>
@@ -79,10 +79,10 @@ const Table = (props) => {
             <td>{russianWord}</td>
             <td>{topic}</td>
             <td>
-              <button onClick={handleClickEdit}>
+              <button onClick={handleClickEdit} className="button">
                 <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
               </button>
-              <button>
+              <button className="button">
                 <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
               </button>
             </td>
