@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./_table.scss";
 import dataCards from "../../assets/DataCards.js";
 import { useState } from "react";
+// import HeadTable from "./HeadTable";
 
 const Table = (props) => {
   const { id, englishWord, transcription, russianWord, topic } = props;

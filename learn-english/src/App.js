@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import dataCards from "./assets/DataCards.js";
 import Footer from "./components/footer/Footer";
 import Table from "./components/table/Table";
-import HeadTable from "./components/table/Table";
+import HeadTable from "./components/table/HeadTable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHamburger,
@@ -152,7 +152,7 @@ function App() {
             onClickTopic={() => handleClick()}
           ></TopicCard>
         )}
-
+        <HeadTable></HeadTable>
         {isButtonClick &&
           dataCards.map((card) => (
             <Table
@@ -162,9 +162,7 @@ function App() {
               transcription={card.transcription}
               russianWord={card.russianWord}
               topic={card.topic}
-            >
-              <HeadTable></HeadTable>
-            </Table>
+            ></Table>
           ))}
       </div>
       <Footer onClickButtonTable={() => showTable()}></Footer>

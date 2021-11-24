@@ -1,0 +1,23 @@
+.thead {
+  width: 100%;
+  display: flex;
+
+  tr {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: flex-start;
+
+    th:not(:first-child) {
+      display: flex;
+      width: 10rem;
+      justify-self: flex-start;
+    }
+    th:first-child {
+      display: flex;
+      width: 3rem;
+      justify-self: flex-start;
+    }
+  }
+}
