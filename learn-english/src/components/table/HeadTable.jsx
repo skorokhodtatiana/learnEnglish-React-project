@@ -4,10 +4,10 @@ const HeadTable = () => {
     <thead className="thead">
       <tr>
         <th>#</th>
-        <th>english word</th>
-        <th>transcription</th>
-        <th>russian word</th>
-        <th>topic</th>
+        <th>ENGLISH WORD</th>
+        <th>TRANSCRIPTION</th>
+        <th>RUSSIAN WORD</th>
+        <th>TOPIC</th>
         <th>ACTION</th>
       </tr>
     </thead>

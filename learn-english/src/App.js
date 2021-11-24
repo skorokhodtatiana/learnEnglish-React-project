@@ -4,10 +4,9 @@ import logo from "./assets/images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
 import TopicCard from "./components/topicCard/TopicCard";
 import React, { useState } from "react";
-import dataCards from "./assets/DataCards.js";
+// import dataCards from "./assets/DataCards.js";
 import Footer from "./components/footer/Footer";
 import Table from "./components/table/Table";
-import HeadTable from "./components/table/HeadTable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHamburger,
@@ -152,18 +151,7 @@ function App() {
             onClickTopic={() => handleClick()}
           ></TopicCard>
         )}
-        <HeadTable></HeadTable>
-        {isButtonClick &&
-          dataCards.map((card) => (
-            <Table
-              key={card.id}
-              id={card.id}
-              englishWord={card.englishWord}
-              transcription={card.transcription}
-              russianWord={card.russianWord}
-              topic={card.topic}
-            ></Table>
-          ))}
+        {isButtonClick && <Table></Table>}
       </div>
       <Footer onClickButtonTable={() => showTable()}></Footer>
     </div>

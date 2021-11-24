@@ -4,16 +4,12 @@
   border: 1px solid black;
 
   .tbody {
-    // width: 100vw;
-    display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-
     tr {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-top: 1px solid black;
 
       td:not(:first-child) {
         width: 10rem;
