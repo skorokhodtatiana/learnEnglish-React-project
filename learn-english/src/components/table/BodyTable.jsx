@@ -30,6 +30,8 @@ const BodyTable = (props) => {
     console.log(changeInputRus);
   };
   const saveChanges = () => {
+    let sortList = dataCards.filter((el) => el.id !== id);
+    setoldListCards(sortList);
     const newWord = {
       id: id,
       englishWord: changeInputEngWord,
@@ -38,8 +40,7 @@ const BodyTable = (props) => {
       topic: topic,
     };
     console.log(newWord);
-    const newArr = [...dataCards];
-    // const newArr = dataCards.push(newWord);
+    const newArr = [...sortList];
     newArr.push(newWord);
     console.log(newArr);
   };
@@ -50,11 +51,10 @@ const BodyTable = (props) => {
 
   const [oldListCards, setoldListCards] = useState(dataCards);
 
-  const handleDelete = (id) => {
-    console.log(id);
-    console.log(oldListCards);
-    let newListCards = oldListCards.filter((el) => el.id !== id);
+  const handleDelete = () => {
+    let newListCards = dataCards.filter((el) => el.id !== id);
     setoldListCards(newListCards);
+    console.log(oldListCards);
   };
 
   return selectEdit ? (
@@ -110,11 +110,7 @@ const BodyTable = (props) => {
         <button onClick={handleClickEdit} className="button">
           <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
         </button>
-        <button
-          value={id}
-          onClick={(id) => handleDelete(id)}
-          className="button"
-        >
+        <button value={id} onClick={() => handleDelete()} className="button">
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
         </button>
       </td>
