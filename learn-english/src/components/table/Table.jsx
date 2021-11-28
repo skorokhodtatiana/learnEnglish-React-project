@@ -7,8 +7,14 @@ import { useState } from "react";
 
 const Tabel = (props) => {
   const [newArrData, setnewArrData] = useState(dataCards);
-  const updateData = (newArr) => {
+
+  const updateDataAfterDelete = (newArr) => {
     console.log("Работвет передача при удалении");
+    setnewArrData(newArr);
+  };
+
+  const updateEditWord = (newArr) => {
+    console.log("Работвет передача при редактировании");
     setnewArrData(newArr);
   };
 
@@ -28,10 +34,11 @@ const Tabel = (props) => {
             id={card.id}
             englishWord={card.englishWord}
             transcription={card.transcription}
-            russianWord={card.russianWord}
+            translation={card.translation}
             topic={card.topic}
             // updateData={props.setnewArrData}
-            updateData={updateData}
+            updateEditWord={updateEditWord}
+            updateDataAfterDelete={updateDataAfterDelete}
           ></BodyTable>
         ))}
       </tbody>

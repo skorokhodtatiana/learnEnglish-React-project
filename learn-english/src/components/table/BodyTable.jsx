@@ -14,34 +14,37 @@ const BodyTable = (props) => {
   const [changeInputTranscription, setchangeInputTranscription] =
     useState(transcription);
   const [changeInputRus, setchangeInputRus] = useState(translation);
+  const [changeInputTopic, setchangeInputTopic] = useState({ topic });
 
-  const handleChangeEng = (eng) => {
-    setchangeInputEngWord(eng.target.value);
-    console.log(changeInputEngWord);
-  };
+  // const handleChangeEng = (eng) => {
+  //   setchangeInputEngWord(eng.target.value);
+  //   console.log(changeInputEngWord);
+  // };
 
-  const handleChangeTranscription = (tr) => {
-    setchangeInputTranscription(tr.target.value);
-    console.log(changeInputTranscription);
-  };
+  // const handleChangeTranscription = (tr) => {
+  //   setchangeInputTranscription(tr.target.value);
+  //   console.log(changeInputTranscription);
+  // };
 
-  const handleChangeRus = (rus) => {
-    setchangeInputRus(rus.target.value);
-    console.log(changeInputRus);
-  };
+  // const handleChangeRus = (rus) => {
+  //   setchangeInputRus(rus.target.value);
+  //   console.log(changeInputRus);
+  // };
   const saveChanges = () => {
-    let sortList = dataCards.filter((el) => el.id !== id);
-    setoldListCards(sortList);
+    // let sortList = dataCards.filter((el) => el.id !== id);
+    // setoldListCards(sortList);
     const newWord = {
       id: id,
       englishWord: changeInputEngWord,
       transcription: changeInputTranscription,
       translation: changeInputRus,
-      topic: topic,
+      topic: changeInputTopic,
     };
     // console.log(newWord);
-    const newArr = [...sortList];
+    const newArr = [...dataCards];
     newArr.push(newWord);
+    props.updateEditWord(newArr);
+    // handleDelete();
     // console.log(newArr);
   };
 
@@ -54,8 +57,7 @@ const BodyTable = (props) => {
   const handleDelete = () => {
     let newListCards = dataCards.filter((el) => el.id !== id);
     setoldListCards(newListCards);
-    // console.log(newListCards);
-    props.updateData(newListCards);
+    props.updateDataAfterDelete(newListCards);
   };
 
   return selectEdit ? (
@@ -67,7 +69,7 @@ const BodyTable = (props) => {
           name="value"
           placeholder={englishWord}
           // value={englishWord}
-          onChange={(eng) => handleChangeEng(eng)}
+          onChange={(eng) => setchangeInputEngWord(eng.target.value)}
         ></input>
       </td>
       <td>
@@ -76,7 +78,7 @@ const BodyTable = (props) => {
           name="value"
           placeholder={transcription}
           // value={transcription}
-          onChange={(tr) => handleChangeTranscription(tr)}
+          onChange={(tr) => setchangeInputTranscription(tr.target.value)}
         ></input>
       </td>
       <td>
@@ -85,11 +87,19 @@ const BodyTable = (props) => {
           name="value"
           placeholder={translation}
           // value={translation}
-          onChange={(rus) => handleChangeRus(rus)}
+          onChange={(rus) => setchangeInputRus(rus.target.value)}
         ></input>
       </td>
       <td>
-        <button>Save</button>
+        <input
+          type="text"
+          name="value"
+          placeholder={topic}
+          // value={translation}
+          onChange={(top) => setchangeInputTopic(top.target.value)}
+        ></input>
+      </td>
+      <td>
         <button onClick={() => saveChanges()}>Save</button>
         <button onClick={() => cancelChanges()}>Cancel change</button>
       </td>
