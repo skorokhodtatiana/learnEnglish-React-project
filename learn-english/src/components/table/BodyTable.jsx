@@ -4,7 +4,7 @@ import dataCards from "../../assets/DataCards.js";
 import { useState } from "react";
 
 const BodyTable = (props) => {
-  const { id, englishWord, transcription, russianWord, topic } = props;
+  const { id, englishWord, transcription, translation, topic } = props;
 
   const [selectEdit, setselectEdit] = useState(false);
   const handleClickEdit = () => {
@@ -13,7 +13,7 @@ const BodyTable = (props) => {
   const [changeInputEngWord, setchangeInputEngWord] = useState(englishWord);
   const [changeInputTranscription, setchangeInputTranscription] =
     useState(transcription);
-  const [changeInputRus, setchangeInputRus] = useState(russianWord);
+  const [changeInputRus, setchangeInputRus] = useState(translation);
 
   const handleChangeEng = (eng) => {
     setchangeInputEngWord(eng.target.value);
@@ -36,13 +36,13 @@ const BodyTable = (props) => {
       id: id,
       englishWord: changeInputEngWord,
       transcription: changeInputTranscription,
-      russianWord: changeInputRus,
+      translation: changeInputRus,
       topic: topic,
     };
-    console.log(newWord);
+    // console.log(newWord);
     const newArr = [...sortList];
     newArr.push(newWord);
-    console.log(newArr);
+    // console.log(newArr);
   };
 
   const cancelChanges = () => {
@@ -54,7 +54,7 @@ const BodyTable = (props) => {
   const handleDelete = () => {
     let newListCards = dataCards.filter((el) => el.id !== id);
     setoldListCards(newListCards);
-    console.log(newListCards);
+    // console.log(newListCards);
     props.updateData(newListCards);
   };
 
@@ -62,37 +62,31 @@ const BodyTable = (props) => {
     <tr>
       <td>{id}</td>
       <td>
-        <form action="#">
-          <input
-            type="text"
-            name="value"
-            placeholder={englishWord}
-            // value={englishWord}
-            onChange={(eng) => handleChangeEng(eng)}
-          ></input>
-        </form>
+        <input
+          type="text"
+          name="value"
+          placeholder={englishWord}
+          // value={englishWord}
+          onChange={(eng) => handleChangeEng(eng)}
+        ></input>
       </td>
       <td>
-        <form action="#">
-          <input
-            type="text"
-            name="value"
-            placeholder={transcription}
-            // value={transcription}
-            onChange={(tr) => handleChangeTranscription(tr)}
-          ></input>
-        </form>
+        <input
+          type="text"
+          name="value"
+          placeholder={transcription}
+          // value={transcription}
+          onChange={(tr) => handleChangeTranscription(tr)}
+        ></input>
       </td>
       <td>
-        <form action="#">
-          <input
-            type="text"
-            name="value"
-            placeholder={russianWord}
-            // value={russianWord}
-            onChange={(rus) => handleChangeRus(rus)}
-          ></input>
-        </form>
+        <input
+          type="text"
+          name="value"
+          placeholder={translation}
+          // value={translation}
+          onChange={(rus) => handleChangeRus(rus)}
+        ></input>
       </td>
       <td>
         <button>Save</button>
@@ -105,7 +99,7 @@ const BodyTable = (props) => {
       <td>{id}</td>
       <td>{englishWord}</td>
       <td>{transcription}</td>
-      <td>{russianWord}</td>
+      <td>{translation}</td>
       <td>{topic}</td>
       <td>
         <button onClick={handleClickEdit} className="button">
@@ -117,8 +111,6 @@ const BodyTable = (props) => {
       </td>
     </tr>
   );
-  //   </tbody>
-  // </table>
 };
 
 export default BodyTable;
