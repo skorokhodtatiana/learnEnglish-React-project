@@ -68,7 +68,7 @@ function App() {
       id: 1,
       image: family,
       nameCard: "Family",
-      size: 4,
+      size: 5,
       isChosen: false,
       isChosenTable: false,
     },
@@ -120,8 +120,8 @@ function App() {
   const [isChosenTable, setisChosenTable] = useState(false);
 
   const showTable = () => {
-    setisButtonClick(!false);
-    setisChosenTable(!false);
+    setisButtonClick(true);
+    setisChosenTable(true);
   };
 
   return (

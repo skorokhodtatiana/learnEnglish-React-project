@@ -1,3 +1,6 @@
+//import { useState } from "react";
+
+// const [newArrData, setnewArrData] = useState(dataCards);
 const dataCards = [
   {
     id: 0,
@@ -95,6 +98,27 @@ const dataCards = [
     englishWord: "milk",
     transcription: " [milk]",
     translation: "молоко",
+    topic: "Food",
+  },
+  {
+    id: 14,
+    englishWord: "dog",
+    transcription: "[dɒg]",
+    translation: "собака",
+    topic: "Animals",
+  },
+  {
+    id: 15,
+    englishWord: "dinosaur",
+    transcription: "[ˈdaɪnəsɔː]",
+    translation: "динозавр",
+    topic: "Animals",
+  },
+  {
+    id: 13,
+    englishWord: "bread",
+    transcription: " [bred]",
+    translation: "хлеб",
     topic: "Food",
   },
 ];

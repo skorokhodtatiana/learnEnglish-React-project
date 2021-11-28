@@ -56,10 +56,49 @@
   font-size: 2rem;
 }
 
-.topicCard-wrapper {
+// .topicCard-wrapper {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   // margin: auto;
+// }
+.btnStep {
+  height: 3rem;
+  width: 3rem;
+  // margin: auto;
+  border: 1px solid $customOrange;
+  border-radius: 50%;
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    background-color: green;
+  }
+}
+
+.prevCard {
+  left: calc(0% + 2rem);
+  opacity: 0;
+}
+
+.activeCard {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nextCard {
+  left: 100%;
+  transform: translateX(calc(-100% - 2rem)); //4rem
+  opacity: 0;
+}
+
+.card-container {
+  position: relative;
+
+  width: 50rem;
+  // height: 22rem;
+
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
 }
