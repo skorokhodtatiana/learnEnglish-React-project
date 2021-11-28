@@ -33,7 +33,7 @@ const TopicCard = (props) => {
                   key={id}
                   englishWord={animal.englishWord}
                   transcription={animal.transcription}
-                  russianWord={animal.russianWord}
+                  translation={animal.translation}
                 ></FlashCard>
               ))}
           </div>
