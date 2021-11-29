@@ -39,34 +39,25 @@ const TopicCard = (props) => {
         <div>
           <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
           <div className="topicCard-wrapper">
-            <button onClick={() => slideLeft()} className="btnStep">
-              &larr;
-            </button>
             <div className="card-container">
-              {/* {arrTopic.map((card, n) => {
-                let position = n === index ? "activeCard" : "nextCard";
-
-                return (
-                  <FlashCard {...card} key={card.id} cardStyle={position} />
-                );
-              })} */}
+              <button onClick={() => slideLeft()} className="btnStep">
+                &larr;
+              </button>
               <FlashCard
                 key={id}
                 englishWord={arrTopic[index].englishWord}
                 transcription={arrTopic[index].transcription}
                 translation={arrTopic[index].translation}
               />
-              ;
+              <button
+                onClick={() => slideRight(arrTopic[index])}
+                className="btnStep"
+              >
+                &rarr;
+              </button>
             </div>
-
-            <button
-              onClick={() => slideRight(arrTopic[index])}
-              className="btnStep"
-            >
-              &rarr;
-            </button>
           </div>
-          <div>{index + 1 + "/" + arrTopic.length}</div>
+          <div className="count">{index + 1 + "/" + arrTopic.length}</div>
         </div>
       ) : (
         <div>

@@ -69,6 +69,8 @@
   // margin: auto;
   border: 1px solid $customOrange;
   border-radius: 50%;
+  align-self: center;
+
   &:hover {
     transform: scale(1.2);
   }
@@ -97,8 +99,13 @@
 .card-container {
   position: relative;
 
-  width: 50rem; //73rem
+  width: 24rem; //73rem
   // height: 22rem;
-
+  margin: auto;
   display: flex;
+}
+.count {
+  margin: auto;
+  width: 1rem;
+  margin-bottom: 2rem;
 }
