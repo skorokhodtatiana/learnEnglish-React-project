@@ -43,13 +43,20 @@ const TopicCard = (props) => {
               &larr;
             </button>
             <div className="card-container">
-              {arrTopic.map((card, n) => {
+              {/* {arrTopic.map((card, n) => {
                 let position = n === index ? "activeCard" : "nextCard";
 
                 return (
                   <FlashCard {...card} key={card.id} cardStyle={position} />
                 );
-              })}
+              })} */}
+              <FlashCard
+                key={id}
+                englishWord={arrTopic[index].englishWord}
+                transcription={arrTopic[index].transcription}
+                translation={arrTopic[index].translation}
+              />
+              ;
             </div>
 
             <button
@@ -59,7 +66,7 @@ const TopicCard = (props) => {
               &rarr;
             </button>
           </div>
-          <div>{index + "/" + arrTopic.length}</div>
+          <div>{index + 1 + "/" + arrTopic.length}</div>
         </div>
       ) : (
         <div>

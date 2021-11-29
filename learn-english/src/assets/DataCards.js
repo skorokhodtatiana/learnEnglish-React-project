@@ -121,6 +121,20 @@ const dataCards = [
     translation: "хлеб",
     topic: "Food",
   },
+  {
+    id: 14,
+    englishWord: "uncle",
+    transcription: "[ʌŋkl]",
+    translation: "дядя",
+    topic: "Family",
+  },
+  {
+    id: 15,
+    englishWord: "sister",
+    transcription: " [ˈsɪstə]",
+    translation: "сестра",
+    topic: "Family",
+  },
 ];
 
 export default dataCards;
