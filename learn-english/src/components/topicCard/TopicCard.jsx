@@ -18,19 +18,11 @@ const TopicCard = (props) => {
   const [index, setIndex] = useState(0);
 
   const slideLeft = () => {
-    // console.log(arrTopic.length + " index " + index);
-    // if (index > 0 && index < arrTopic.length) {
     setIndex(index - 1);
-    // console.log("index-1 :" + index);
-    // }
   };
 
   const slideRight = () => {
-    // console.log(arrTopic.length + " index " + index);
-    // if (index >= 0 && index < arrTopic.length - 1) {
     setIndex(index + 1);
-    // console.log("index+1 :" + index);
-    // }
   };
 
   return (
