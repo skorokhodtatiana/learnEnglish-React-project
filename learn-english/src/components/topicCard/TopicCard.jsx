@@ -18,19 +18,19 @@ const TopicCard = (props) => {
   const [index, setIndex] = useState(0);
 
   const slideLeft = () => {
-    console.log(arrTopic.length + " index " + index);
-    if (index > 0 && index < arrTopic.length) {
-      setIndex(index - 1);
-      console.log("index-1 :" + index);
-    }
+    // console.log(arrTopic.length + " index " + index);
+    // if (index > 0 && index < arrTopic.length) {
+    setIndex(index - 1);
+    // console.log("index-1 :" + index);
+    // }
   };
 
   const slideRight = () => {
-    console.log(arrTopic.length + " index " + index);
-    if (index >= 0 && index < arrTopic.length - 1) {
-      setIndex(index + 1);
-      console.log("index+1 :" + index);
-    }
+    // console.log(arrTopic.length + " index " + index);
+    // if (index >= 0 && index < arrTopic.length - 1) {
+    setIndex(index + 1);
+    // console.log("index+1 :" + index);
+    // }
   };
 
   return (
@@ -40,21 +40,25 @@ const TopicCard = (props) => {
           <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
           <div className="topicCard-wrapper">
             <div className="card-container">
-              <button onClick={() => slideLeft()} className="btnStep">
-                &larr;
-              </button>
+              {index > 0 && (
+                <button onClick={() => slideLeft()} className="btnStep">
+                  &larr;
+                </button>
+              )}
               <FlashCard
                 key={id}
                 englishWord={arrTopic[index].englishWord}
                 transcription={arrTopic[index].transcription}
                 translation={arrTopic[index].translation}
               />
-              <button
-                onClick={() => slideRight(arrTopic[index])}
-                className="btnStep"
-              >
-                &rarr;
-              </button>
+              {index < arrTopic.length - 1 && (
+                <button
+                  onClick={() => slideRight(arrTopic[index])}
+                  className="btnStep"
+                >
+                  &rarr;
+                </button>
+              )}
             </div>
           </div>
           <div className="count">{index + 1 + "/" + arrTopic.length}</div>

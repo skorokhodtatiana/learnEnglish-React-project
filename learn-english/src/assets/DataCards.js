@@ -8,6 +8,7 @@ const dataCards = [
     transcription: "[ ˈbʌtəflaɪ ]",
     translation: "бабочка",
     topic: "Animals",
+    ShowTranslate: false,
   },
   {
     id: 1,
@@ -15,6 +16,7 @@ const dataCards = [
     transcription: "[ ˈhedʒhɒɡ ]",
     translation: "еж",
     topic: "Animals",
+    ShowTranslate: false,
   },
   {
     id: 2,
@@ -22,6 +24,7 @@ const dataCards = [
     transcription: "[ˈyo͞onəˌkôrn]",
     translation: "единорог",
     topic: "Animals",
+    ShowTranslate: false,
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ const dataCards = [
     transcription: " [kaʊ]",
     translation: "корова",
     topic: "Animals",
+    ShowTranslate: false,
   },
   {
     id: 4,
@@ -36,6 +40,7 @@ const dataCards = [
     transcription: "[ˈtaɪgə]",
     translation: "тигр",
     topic: "Animals",
+    ShowTranslate: false,
   },
   {
     id: 5,
@@ -106,6 +111,7 @@ const dataCards = [
     transcription: "[dɒg]",
     translation: "собака",
     topic: "Animals",
+    ShowTranslate: false,
   },
   {
     id: 15,
@@ -113,6 +119,7 @@ const dataCards = [
     transcription: "[ˈdaɪnəsɔː]",
     translation: "динозавр",
     topic: "Animals",
+    ShowTranslate: false,
   },
   {
     id: 13,
