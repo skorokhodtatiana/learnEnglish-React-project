@@ -4,6 +4,7 @@ import logo from "./assets/images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
 import TopicCard from "./components/topicCard/TopicCard";
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Table from "./components/table/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -125,34 +126,36 @@ function App() {
 
   return (
     <div className="App">
-      <Header logo={logo}></Header>
-      <div className="topicCard-wrapper">
-        {!isTopicChosen &&
-          topicCards.map((card, id) => (
-            <TopicCard
-              key={card.id}
-              id={card.id}
-              image={card.image}
-              nameCard={card.nameCard}
-              size={"(" + card.size + " cards)"}
-              isChosenTable={isChosenTable}
-              onClickTopic={() => handleClick(id)}
-            ></TopicCard>
-          ))}
+      <Router>
+        <Header logo={logo}></Header>
+        <div className="topicCard-wrapper">
+          {!isTopicChosen &&
+            topicCards.map((card, id) => (
+              <TopicCard
+                key={card.id}
+                id={card.id}
+                image={card.image}
+                nameCard={card.nameCard}
+                size={"(" + card.size + " cards)"}
+                isChosenTable={isChosenTable}
+                onClickTopic={() => handleClick(id)}
+              ></TopicCard>
+            ))}
 
-        {isTopicChosen && (
-          <TopicCard
-            key={topicCards[chosenCardId].id}
-            image={topicCards[chosenCardId].image}
-            nameCard={topicCards[chosenCardId].nameCard}
-            size={"(" + topicCards[chosenCardId].size + " cards)"}
-            isChosen={topicCards[chosenCardId].isChosen}
-            onClickTopic={() => handleClick()}
-          ></TopicCard>
-        )}
-        {isButtonClick && <Table></Table>}
-      </div>
-      <Footer onClickButtonTable={() => showTable()}></Footer>
+          {isTopicChosen && (
+            <TopicCard
+              key={topicCards[chosenCardId].id}
+              image={topicCards[chosenCardId].image}
+              nameCard={topicCards[chosenCardId].nameCard}
+              size={"(" + topicCards[chosenCardId].size + " cards)"}
+              isChosen={topicCards[chosenCardId].isChosen}
+              onClickTopic={() => handleClick()}
+            ></TopicCard>
+          )}
+          {isButtonClick && <Table></Table>}
+        </div>
+        <Footer onClickButtonTable={() => showTable()}></Footer>
+      </Router>
     </div>
   );
 }

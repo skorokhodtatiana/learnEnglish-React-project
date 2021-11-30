@@ -68,7 +68,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={englishWord}
-          // value={englishWord}
+          value={englishWord}
           onChange={(eng) => setchangeInputEngWord(eng.target.value)}
         ></input>
       </td>
@@ -77,7 +77,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={transcription}
-          // value={transcription}
+          value={transcription}
           onChange={(tr) => setchangeInputTranscription(tr.target.value)}
         ></input>
       </td>
@@ -86,7 +86,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={translation}
-          // value={translation}
+          value={translation}
           onChange={(rus) => setchangeInputRus(rus.target.value)}
         ></input>
       </td>
@@ -95,7 +95,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={topic}
-          // value={translation}
+          value={translation}
           onChange={(top) => setchangeInputTopic(top.target.value)}
         ></input>
       </td>

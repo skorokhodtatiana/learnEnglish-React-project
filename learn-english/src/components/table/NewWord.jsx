@@ -26,12 +26,12 @@ const NewWord = (props) => {
   };
   return (
     <tr>
-      <td></td>
+      <td>{dataCards.length}</td>
       <td>
         <input
           type="text"
           placeholder="new english word"
-          //   value={newEnglishWord}
+          value={newEnglishWord}
           onBlur={(e) => letnewEnglishWord(e.target.value)}
         ></input>
       </td>
@@ -39,7 +39,7 @@ const NewWord = (props) => {
         <input
           type="text"
           placeholder="transcription"
-          //   value={transcription}
+          value={transcription}
           onBlur={(e) => lettranscription(e.target.value)}
         ></input>
       </td>
@@ -47,7 +47,7 @@ const NewWord = (props) => {
         <input
           type="text"
           placeholder="translation"
-          //   value={translation}
+          value={translation}
           onBlur={(e) => lettranslation(e.target.value)}
         ></input>
       </td>
@@ -55,7 +55,7 @@ const NewWord = (props) => {
         <input
           type="text"
           placeholder="topic"
-          //   value={topic}
+          value={topic}
           onBlur={(e) => lettopic(e.target.value)}
         ></input>
       </td>
