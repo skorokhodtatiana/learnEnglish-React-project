@@ -39,7 +39,7 @@ const BodyTable = (props) => {
 
   const handleDelete = () => {
     let newListCards = dataCards.filter((el) => el.id !== id);
-    setoldListCards(newListCards);
+    setoldListCards(oldListCards);
     props.updateDataAfterDelete(newListCards);
   };
 
