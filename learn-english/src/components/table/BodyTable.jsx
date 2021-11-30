@@ -14,38 +14,21 @@ const BodyTable = (props) => {
   const [changeInputTranscription, setchangeInputTranscription] =
     useState(transcription);
   const [changeInputRus, setchangeInputRus] = useState(translation);
-  const [changeInputTopic, setchangeInputTopic] = useState({ topic });
+  const [changeInputTopic, setchangeInputTopic] = useState(topic);
 
-  // const handleChangeEng = (eng) => {
-  //   setchangeInputEngWord(eng.target.value);
-  //   console.log(changeInputEngWord);
-  // };
-
-  // const handleChangeTranscription = (tr) => {
-  //   setchangeInputTranscription(tr.target.value);
-  //   console.log(changeInputTranscription);
-  // };
-
-  // const handleChangeRus = (rus) => {
-  //   setchangeInputRus(rus.target.value);
-  //   console.log(changeInputRus);
-  // };
   const saveChanges = () => {
-    // let sortList = dataCards.filter((el) => el.id !== id);
-    // setoldListCards(sortList);
     const newWord = {
-      id: id,
+      id: dataCards.length,
       englishWord: changeInputEngWord,
       transcription: changeInputTranscription,
       translation: changeInputRus,
       topic: changeInputTopic,
     };
-    // console.log(newWord);
+
     const newArr = [...dataCards];
     newArr.push(newWord);
     props.updateEditWord(newArr);
-    // handleDelete();
-    // console.log(newArr);
+    //handleDelete();
   };
 
   const cancelChanges = () => {
@@ -68,7 +51,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={englishWord}
-          value={englishWord}
+          value={changeInputEngWord}
           onChange={(eng) => setchangeInputEngWord(eng.target.value)}
         ></input>
       </td>
@@ -77,7 +60,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={transcription}
-          value={transcription}
+          value={changeInputTranscription}
           onChange={(tr) => setchangeInputTranscription(tr.target.value)}
         ></input>
       </td>
@@ -86,7 +69,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={translation}
-          value={translation}
+          value={changeInputRus}
           onChange={(rus) => setchangeInputRus(rus.target.value)}
         ></input>
       </td>
@@ -95,7 +78,7 @@ const BodyTable = (props) => {
           type="text"
           name="value"
           placeholder={topic}
-          value={translation}
+          value={changeInputTopic}
           onChange={(top) => setchangeInputTopic(top.target.value)}
         ></input>
       </td>

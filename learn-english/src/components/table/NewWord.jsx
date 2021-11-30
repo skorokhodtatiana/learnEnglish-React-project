@@ -12,13 +12,13 @@ const NewWord = (props) => {
       id: dataCards.length,
       englishWord: newEnglishWord,
       transcription: transcription,
-      russianWord: translation,
+      translation: translation,
       topic: topic,
     };
-    letnewEnglishWord("");
-    lettranscription("");
-    lettranslation("");
-    lettopic("");
+    letnewEnglishWord(" ");
+    lettranscription(" ");
+    lettranslation(" ");
+    lettopic(" ");
 
     const newArr = [...dataCards];
     newArr.push(newCard);
@@ -26,13 +26,13 @@ const NewWord = (props) => {
   };
   return (
     <tr>
-      <td>{dataCards.length}</td>
+      <td></td>
       <td>
         <input
           type="text"
           placeholder="new english word"
           value={newEnglishWord}
-          onBlur={(e) => letnewEnglishWord(e.target.value)}
+          onChange={(e) => letnewEnglishWord(e.target.value)}
         ></input>
       </td>
       <td>
@@ -40,7 +40,7 @@ const NewWord = (props) => {
           type="text"
           placeholder="transcription"
           value={transcription}
-          onBlur={(e) => lettranscription(e.target.value)}
+          onChange={(e) => lettranscription(e.target.value)}
         ></input>
       </td>
       <td>
@@ -48,7 +48,7 @@ const NewWord = (props) => {
           type="text"
           placeholder="translation"
           value={translation}
-          onBlur={(e) => lettranslation(e.target.value)}
+          onChange={(e) => lettranslation(e.target.value)}
         ></input>
       </td>
       <td>
@@ -56,7 +56,7 @@ const NewWord = (props) => {
           type="text"
           placeholder="topic"
           value={topic}
-          onBlur={(e) => lettopic(e.target.value)}
+          onChange={(e) => lettopic(e.target.value)}
         ></input>
       </td>
       <td>
