@@ -38,10 +38,11 @@ const TopicCard = (props) => {
                 </button>
               )}
               <FlashCard
-                key={id}
+                key={arrTopic[index].id}
                 englishWord={arrTopic[index].englishWord}
                 transcription={arrTopic[index].transcription}
                 translation={arrTopic[index].translation}
+                wordRu={arrTopic[index].wordRu}
               />
               {index < arrTopic.length - 1 && (
                 <button

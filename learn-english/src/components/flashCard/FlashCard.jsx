@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./_flashCard.scss";
 
 const FlashCard = (props) => {
-  const { englishWord, transcription, translation, ShowTranslate } = props;
-  const [pressed, setPressed] = useState(ShowTranslate);
+  const { englishWord, transcription, translation, wordRu } = props;
+  const [pressed, setPressed] = useState(wordRu);
   const handlePressed = () => {
     setPressed(true);
   };
