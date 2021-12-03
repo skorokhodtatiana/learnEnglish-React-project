@@ -8,7 +8,7 @@ const dataCards = [
     transcription: "[ ˈbʌtəflaɪ ]",
     translation: "бабочка",
     topic: "Animals",
-    ShowTranslate: false,
+    wordRu: false,
   },
   {
     id: 1,
@@ -16,7 +16,7 @@ const dataCards = [
     transcription: "[ ˈhedʒhɒɡ ]",
     translation: "еж",
     topic: "Animals",
-    ShowTranslate: false,
+    wordRu: false,
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const dataCards = [
     transcription: "[ˈyo͞onəˌkôrn]",
     translation: "единорог",
     topic: "Animals",
-    ShowTranslate: false,
+    wordRu: false,
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const dataCards = [
     transcription: " [kaʊ]",
     translation: "корова",
     topic: "Animals",
-    ShowTranslate: false,
+    wordRu: false,
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const dataCards = [
     transcription: "[ˈtaɪgə]",
     translation: "тигр",
     topic: "Animals",
-    ShowTranslate: false,
+    wordRu: false,
   },
   {
     id: 5,
@@ -48,6 +48,7 @@ const dataCards = [
     transcription: "[ˈmʌðə]",
     translation: "мама",
     topic: "Family",
+    wordRu: false,
   },
   {
     id: 6,
@@ -55,6 +56,7 @@ const dataCards = [
     transcription: "[dæd]",
     translation: "папа",
     topic: "Family",
+    wordRu: false,
   },
   {
     id: 7,
@@ -62,6 +64,7 @@ const dataCards = [
     transcription: " [ˈnɛfju]",
     translation: "племянник",
     topic: "Family",
+    wordRu: false,
   },
   {
     id: 8,
@@ -69,6 +72,7 @@ const dataCards = [
     transcription: " [sʌn]",
     translation: "сын",
     topic: "Family",
+    wordRu: false,
   },
   {
     id: 9,
@@ -76,6 +80,7 @@ const dataCards = [
     transcription: " [ˈdɔːtə]",
     translation: "дочь",
     topic: "Family",
+    wordRu: false,
   },
   {
     id: 10,
@@ -83,6 +88,7 @@ const dataCards = [
     transcription: " [aepl]",
     translation: "яблоко",
     topic: "Food",
+    wordRu: false,
   },
   {
     id: 11,
@@ -90,6 +96,7 @@ const dataCards = [
     transcription: " [mi:t]",
     translation: "мясо",
     topic: "Food",
+    wordRu: false,
   },
   {
     id: 12,
@@ -97,6 +104,7 @@ const dataCards = [
     transcription: " [fɪʃ]",
     translation: "рыба",
     topic: "Food",
+    wordRu: false,
   },
   {
     id: 13,
@@ -104,6 +112,7 @@ const dataCards = [
     transcription: " [milk]",
     translation: "молоко",
     topic: "Food",
+    wordRu: false,
   },
   {
     id: 14,
@@ -111,7 +120,7 @@ const dataCards = [
     transcription: "[dɒg]",
     translation: "собака",
     topic: "Animals",
-    ShowTranslate: false,
+    wordRu: false,
   },
   {
     id: 15,
@@ -119,7 +128,7 @@ const dataCards = [
     transcription: "[ˈdaɪnəsɔː]",
     translation: "динозавр",
     topic: "Animals",
-    ShowTranslate: false,
+    wordRu: false,
   },
   {
     id: 16,
@@ -127,6 +136,7 @@ const dataCards = [
     transcription: " [bred]",
     translation: "хлеб",
     topic: "Food",
+    wordRu: false,
   },
   {
     id: 17,
@@ -134,6 +144,7 @@ const dataCards = [
     transcription: "[ʌŋkl]",
     translation: "дядя",
     topic: "Family",
+    wordRu: false,
   },
   {
     id: 18,
@@ -141,6 +152,7 @@ const dataCards = [
     transcription: " [ˈsɪstə]",
     translation: "сестра",
     topic: "Family",
+    wordRu: false,
   },
 ];
 

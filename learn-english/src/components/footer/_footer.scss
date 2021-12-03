@@ -45,6 +45,7 @@
         }
         .iconFacebook {
           margin-left: 5px;
+          margin-right: 5px;
 
           &:active {
             color: #34945f;
@@ -90,6 +91,7 @@
           text-align: center;
           line-height: 1.5rem;
           text-decoration: none;
+          list-style-type: none;
           color: $customGray;
 
           &:hover {

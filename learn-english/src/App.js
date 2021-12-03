@@ -4,8 +4,9 @@ import logo from "./assets/images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
 import TopicCard from "./components/topicCard/TopicCard";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+//import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
+import { Outlet, Link } from "react-router-dom";
 import Table from "./components/table/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,6 +17,7 @@ import {
   faBriefcase,
   faTree,
 } from "@fortawesome/free-solid-svg-icons";
+//import FlashCard from "./components/flashCard/FlashCard";
 
 const food = (
   <FontAwesomeIcon
@@ -126,36 +128,39 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Header logo={logo}></Header>
-        <div className="topicCard-wrapper">
-          {!isTopicChosen &&
-            topicCards.map((card, id) => (
-              <TopicCard
-                key={card.id}
-                id={card.id}
-                image={card.image}
-                nameCard={card.nameCard}
-                size={"(" + card.size + " cards)"}
-                isChosenTable={isChosenTable}
-                onClickTopic={() => handleClick(id)}
-              ></TopicCard>
-            ))}
+      <Header logo={logo}></Header>
+      <Outlet />
 
-          {isTopicChosen && (
+      <div className="topicCard-wrapper">
+        {/* <Link to="/topicCard"> */}
+        {!isTopicChosen &&
+          topicCards.map((card, id) => (
             <TopicCard
-              key={topicCards[chosenCardId].id}
-              image={topicCards[chosenCardId].image}
-              nameCard={topicCards[chosenCardId].nameCard}
-              size={"(" + topicCards[chosenCardId].size + " cards)"}
-              isChosen={topicCards[chosenCardId].isChosen}
-              onClickTopic={() => handleClick()}
+              key={card.id}
+              id={card.id}
+              image={card.image}
+              nameCard={card.nameCard}
+              size={"(" + card.size + " cards)"}
+              isChosenTable={isChosenTable}
+              onClickTopic={() => handleClick(id)}
             ></TopicCard>
-          )}
-          {isButtonClick && <Table></Table>}
-        </div>
-        <Footer onClickButtonTable={() => showTable()}></Footer>
-      </Router>
+          ))}
+        {/* </Link> */}
+
+        {isTopicChosen && (
+          <TopicCard
+            key={topicCards[chosenCardId].id}
+            image={topicCards[chosenCardId].image}
+            nameCard={topicCards[chosenCardId].nameCard}
+            size={"(" + topicCards[chosenCardId].size + " cards)"}
+            isChosen={topicCards[chosenCardId].isChosen}
+            onClickTopic={() => handleClick()}
+            to={`/topicCards/${topicCards[chosenCardId].nameCard}`}
+          ></TopicCard>
+        )}
+        {isButtonClick && <Table></Table>}
+      </div>
+      <Footer onClickButtonTable={() => showTable()}></Footer>
     </div>
   );
 }

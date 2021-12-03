@@ -35,11 +35,11 @@ const BodyTable = (props) => {
     setselectEdit(false);
   };
 
-  const [oldListCards, setoldListCards] = useState(dataCards);
+  // const [oldListCards, setoldListCards] = useState(dataCards);
 
   const handleDelete = () => {
     let newListCards = dataCards.filter((el) => el.id !== id);
-    setoldListCards(oldListCards);
+    // setoldListCards(oldListCards);
     props.updateDataAfterDelete(newListCards);
   };
 

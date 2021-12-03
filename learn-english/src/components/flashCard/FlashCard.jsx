@@ -15,7 +15,7 @@ const FlashCard = (props) => {
       {pressed ? (
         <div className="fleshCard__russianhWord">{translation}</div>
       ) : (
-        <button className="fleshCard__btnOpen" onClick={handlePressed}>
+        <button className="fleshCard__btnOpen" onClick={() => handlePressed()}>
           Перевод
         </button>
       )}
