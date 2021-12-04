@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
-import dataCards from "../../assets/DataCards.js";
+import { dataCards } from "../../assets/DataCards.js";
 import { useState } from "react";
 
 const BodyTable = (props) => {

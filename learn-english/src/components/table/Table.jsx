@@ -1,5 +1,5 @@
 import BodyTable from "./BodyTable";
-import dataCards from "../../assets/DataCards";
+import { dataCards } from "../../assets/DataCards";
 import HeadTable from "./HeadTable";
 import NewWord from "./NewWord";
 import "./_table.scss";

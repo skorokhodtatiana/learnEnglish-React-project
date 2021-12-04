@@ -1,5 +1,5 @@
 import { useState } from "react";
-import dataCards from "../../assets/DataCards.js";
+import { dataCards } from "../../assets/DataCards.js";
 
 const NewWord = (props) => {
   const [newEnglishWord, letnewEnglishWord] = useState("");
