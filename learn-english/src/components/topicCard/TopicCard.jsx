@@ -10,18 +10,7 @@ import Topic from "./Topic";
 const TopicCardPattern = (props) => {
   const { id, image, nameCard, size } = props;
 
-  const [isFlashCard, setisFlashCard] = useState(false);
-  const renderCards = () => {
-    if (isFlashCard) {
-      return <FlashCard />;
-    }
-    // else {
-    //   return <Topic />;
-    // }
-  };
-
   const openTopicCard = (id) => {
-    setisFlashCard(true);
     props.onClickTopic(id);
   };
 

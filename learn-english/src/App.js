@@ -31,7 +31,11 @@ function App() {
         <Routes>
           <Route exact path="table" element={<Tabel />}></Route>
           <Route exact path="/" element={<TopicCard />}>
-            <Route exact path="/:topicName" element={<Topic />}></Route>
+            <Route
+              exact
+              path="topicCard/:topicName"
+              element={<Topic />}
+            ></Route>
           </Route>
           <Route
             path="/404"
