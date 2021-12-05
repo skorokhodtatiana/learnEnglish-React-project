@@ -4,17 +4,29 @@ import "./_topicCard.scss";
 import { dataCards, initCards } from "../../assets/DataCards.js";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import Topic from "./Topic";
 // import { useParams } from "react-router-dom";
 
 const TopicCardPattern = (props) => {
   const { id, image, nameCard, size } = props;
 
+  const [isFlashCard, setisFlashCard] = useState(false);
+  const renderCards = () => {
+    if (isFlashCard) {
+      return <FlashCard />;
+    }
+    // else {
+    //   return <Topic />;
+    // }
+  };
+
   const openTopicCard = (id) => {
+    setisFlashCard(true);
     props.onClickTopic(id);
   };
 
-  const showTopicCards = props.isChosen ? "isNone" : " ";
-  const tableVisible = props.isChosenTable ? "isNone" : " ";
+  // const showTopicCards = props.isChosen ? "isNone" : " ";
+  // const tableVisible = props.isChosenTable ? "isNone" : " ";
 
   const arrTopic = dataCards.filter((word) => word.topic === props.nameCard);
 
@@ -29,54 +41,58 @@ const TopicCardPattern = (props) => {
   };
 
   return (
-    <div className={"topicCard" + showTopicCards + tableVisible}>
-      {props.isChosen ? (
-        <div>
-          <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
-          <div className="topicCard-wrapper">
-            <div className="card-container">
-              {index > 0 && (
-                <button onClick={() => slideLeft()} className="btnStep">
-                  &larr;
-                </button>
-              )}
-              <FlashCard
-                key={arrTopic[index].id}
-                englishWord={arrTopic[index].englishWord}
-                transcription={arrTopic[index].transcription}
-                translation={arrTopic[index].translation}
-                wordRu={arrTopic[index].wordRu}
-              />
-              {index < arrTopic.length - 1 && (
-                <button
-                  onClick={() => slideRight(arrTopic[index])}
-                  className="btnStep"
-                >
-                  &rarr;
-                </button>
-              )}
+    // <div className={"topicCard" + showTopicCards + tableVisible}>
+    // <div className="topicCard">
+    <>
+      <div className="topicCard">
+        {props.isChosen ? (
+          <div>
+            <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
+            <div className="topicCard-wrapper">
+              <div className="card-container">
+                {index > 0 && (
+                  <button onClick={() => slideLeft()} className="btnStep">
+                    &larr;
+                  </button>
+                )}
+                <FlashCard
+                  key={arrTopic[index].id}
+                  englishWord={arrTopic[index].englishWord}
+                  transcription={arrTopic[index].transcription}
+                  translation={arrTopic[index].translation}
+                  wordRu={arrTopic[index].wordRu}
+                />
+                {index < arrTopic.length - 1 && (
+                  <button
+                    onClick={() => slideRight(arrTopic[index])}
+                    className="btnStep"
+                  >
+                    &rarr;
+                  </button>
+                )}
+              </div>
             </div>
+            <div className="count">{index + 1 + "/" + arrTopic.length}</div>
           </div>
-          <div className="count">{index + 1 + "/" + arrTopic.length}</div>
-        </div>
-      ) : (
-        <div>
-          <div className="topicCard__picture">{image}</div>
-          <div className={"topicCard__name textCard"}>{nameCard}</div>
-          <div className="textCard">{size}</div>
+        ) : (
+          <div>
+            <div className="topicCard__picture">{image}</div>
+            <div className={"topicCard__name textCard"}>{nameCard}</div>
+            <div className="textCard">{size}</div>
 
-          <button
-            id={id}
-            onClick={() => {
-              openTopicCard(id);
-            }}
-            className="topicCard__btnOpen"
-          >
-            Open
-          </button>
-        </div>
-      )}
-    </div>
+            <button
+              id={id}
+              onClick={() => {
+                openTopicCard(id);
+              }}
+              className="topicCard__btnOpen"
+            >
+              Open
+            </button>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
@@ -95,7 +111,7 @@ const TopicCard = (props) => {
     <div className="topicCard-wrapper">
       {!isTopicChosen &&
         topicCards.map((card, id) => (
-          <Link to={card.nameCard} key={card.id}>
+          <Link to={`/topicCard/${card.nameCard}`} key={card.id}>
             <TopicCardPattern
               key={card.id}
               id={card.id}

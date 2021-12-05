@@ -30,8 +30,8 @@ function App() {
 
         <Routes>
           <Route exact path="table" element={<Tabel />}></Route>
-          <Route exact path="/:topicName" element={<TopicCard />}>
-            {/* <Route exact path="/:topicName" element={<Topic />}></Route> */}
+          <Route exact path="/" element={<TopicCard />}>
+            <Route exact path="/:topicName" element={<Topic />}></Route>
           </Route>
           <Route
             path="/404"
@@ -42,6 +42,20 @@ function App() {
               </main>
             }
           ></Route>
+          <Route
+            path="*"
+            element={
+              <main
+                style={{
+                  padding: "1rem",
+                  textAlign: "center",
+                  fontSize: "3rem",
+                }}
+              >
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Routes>
 
         {/* <div className="topicCard-wrapper">
