@@ -3,7 +3,7 @@ import FlashCard from "../flashCard/FlashCard";
 import "./_topicCard.scss";
 import { dataCards, initCards } from "../../assets/DataCards.js";
 import { Link } from "react-router-dom";
-
+import { Outlet } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
 const TopicCardPattern = (props) => {
@@ -72,7 +72,7 @@ const TopicCardPattern = (props) => {
             }}
             className="topicCard__btnOpen"
           >
-            <Link to="nameCard">Open</Link>
+            Open
           </button>
         </div>
       )}
@@ -80,7 +80,7 @@ const TopicCardPattern = (props) => {
   );
 };
 
-const TopicCard = () => {
+const TopicCard = (props) => {
   const [topicCards, setTopicCards] = useState(initCards);
   const [isTopicChosen, setIsTopicChosen] = useState(false); //слежу за выбрано/не выбрано
   const [chosenCardId, setChosenCardId] = useState(-1); //слежу за id топика
@@ -95,14 +95,16 @@ const TopicCard = () => {
     <div className="topicCard-wrapper">
       {!isTopicChosen &&
         topicCards.map((card, id) => (
-          <TopicCardPattern
-            key={card.id}
-            id={card.id}
-            image={card.image}
-            nameCard={card.nameCard}
-            size={"(" + card.size + " cards)"}
-            onClickTopic={() => handleClick(id)}
-          ></TopicCardPattern>
+          <Link to={card.nameCard} key={card.id}>
+            <TopicCardPattern
+              key={card.id}
+              id={card.id}
+              image={card.image}
+              nameCard={card.nameCard}
+              size={"(" + card.size + " cards)"}
+              onClickTopic={() => handleClick(id)}
+            ></TopicCardPattern>
+          </Link>
         ))}
 
       {isTopicChosen && (
@@ -113,8 +115,10 @@ const TopicCard = () => {
           size={"(" + topicCards[chosenCardId].size + " cards)"}
           isChosen={topicCards[chosenCardId].isChosen}
           onClickTopic={() => handleClick()}
+          // {props.match.params.topicName}
         ></TopicCardPattern>
       )}
+      <Outlet />
     </div>
   );
 };

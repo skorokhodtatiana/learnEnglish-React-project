@@ -6,7 +6,7 @@ import TopicCard from "./components/topicCard/TopicCard";
 import React, { useState } from "react";
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
-import { Outlet } from "react-router-dom";
+
 import Table from "./components/table/Table";
 import { initCards } from "./assets/DataCards";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -29,9 +29,9 @@ function App() {
         <Header logo={logo}></Header>
 
         <Routes>
-          <Route path="table" element={<Tabel />}></Route>
-          <Route path="/" element={<TopicCard />}>
-            <Route path=":topicName" element={<Topic />}></Route>
+          <Route exact path="table" element={<Tabel />}></Route>
+          <Route exact path="/:topicName" element={<TopicCard />}>
+            {/* <Route exact path="/:topicName" element={<Topic />}></Route> */}
           </Route>
           <Route
             path="/404"
