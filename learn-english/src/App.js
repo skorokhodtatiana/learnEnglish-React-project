@@ -9,6 +9,9 @@ import Footer from "./components/footer/Footer";
 import { Outlet } from "react-router-dom";
 import Table from "./components/table/Table";
 import { initCards } from "./assets/DataCards";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Tabel from "./components/table/Table";
+import Topic from "./components/topicCard/Topic";
 
 function App() {
   const [isTable, setIsTable] = useState(false);
@@ -22,13 +25,32 @@ function App() {
 
   return (
     <div className="App">
-      <Header logo={logo}></Header>
+      <BrowserRouter>
+        <Header logo={logo}></Header>
 
-      <div className="topicCard-wrapper">
+        <Routes>
+          <Route path="table" element={<Tabel />}></Route>
+          <Route path="/" element={<TopicCard />}>
+            <Route path=":topicName" element={<Topic />}></Route>
+          </Route>
+          <Route
+            path="/404"
+            element={
+              <main style={{ textAlign: "center", fontSize: "4rem" }}>
+                <h1>404</h1>
+                <h3>Not found</h3>
+              </main>
+            }
+          ></Route>
+        </Routes>
+
+        {/* <div className="topicCard-wrapper">
         <Outlet />
         {renderMainMenu()}
-      </div>
-      <Footer onClickButtonTable={() => setIsTable(!isTable)}></Footer>
+      </div> */}
+
+        <Footer onClickButtonTable={() => setIsTable(!isTable)}></Footer>
+      </BrowserRouter>
     </div>
   );
 }

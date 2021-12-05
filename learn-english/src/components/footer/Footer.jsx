@@ -93,7 +93,7 @@ const Footer = (props) => {
           </ul>
           <section className="footer__btn">
             <button onClick={() => openTable()} className="footer__btnSearch">
-              Browse or Search
+              <Link to="/table"> Browse or Search</Link>
             </button>
           </section>
         </nav>

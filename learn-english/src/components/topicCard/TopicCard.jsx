@@ -4,7 +4,7 @@ import "./_topicCard.scss";
 import { dataCards, initCards } from "../../assets/DataCards.js";
 import { Link } from "react-router-dom";
 
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const TopicCardPattern = (props) => {
   const { id, image, nameCard, size } = props;
@@ -72,7 +72,7 @@ const TopicCardPattern = (props) => {
             }}
             className="topicCard__btnOpen"
           >
-            Open
+            <Link to="nameCard">Open</Link>
           </button>
         </div>
       )}
@@ -102,7 +102,6 @@ const TopicCard = () => {
             nameCard={card.nameCard}
             size={"(" + card.size + " cards)"}
             onClickTopic={() => handleClick(id)}
-            to={`/topicCards/${card.nameCard}`}
           ></TopicCardPattern>
         ))}
 
@@ -114,7 +113,6 @@ const TopicCard = () => {
           size={"(" + topicCards[chosenCardId].size + " cards)"}
           isChosen={topicCards[chosenCardId].isChosen}
           onClickTopic={() => handleClick()}
-          to={`/topicCards/${topicCards[chosenCardId].nameCard}`}
         ></TopicCardPattern>
       )}
     </div>
