@@ -4,6 +4,8 @@ import "./_topicCard.scss";
 import { dataCards, initCards } from "../../assets/DataCards.js";
 import { Link } from "react-router-dom";
 
+import { useParams } from "react-router-dom";
+
 const TopicCardPattern = (props) => {
   const { id, image, nameCard, size } = props;
 
@@ -62,7 +64,7 @@ const TopicCardPattern = (props) => {
           <div className="topicCard__picture">{image}</div>
           <div className={"topicCard__name textCard"}>{nameCard}</div>
           <div className="textCard">{size}</div>
-          {/* <Link to="topicCard/:nameCard"> */}
+
           <button
             id={id}
             onClick={() => {
@@ -72,7 +74,6 @@ const TopicCardPattern = (props) => {
           >
             Open
           </button>
-          {/* </Link> */}
         </div>
       )}
     </div>
@@ -94,17 +95,15 @@ const TopicCard = () => {
     <div className="topicCard-wrapper">
       {!isTopicChosen &&
         topicCards.map((card, id) => (
-          <Link to="/topicCard" key={card.id}>
-            <TopicCardPattern
-              id={card.id}
-              image={card.image}
-              nameCard={card.nameCard}
-              size={"(" + card.size + " cards)"}
-              //isChosenTable={isChosenTable}
-              onClickTopic={() => handleClick(id)}
-              to={`/topicCards/${card.nameCard}`}
-            ></TopicCardPattern>
-          </Link>
+          <TopicCardPattern
+            key={card.id}
+            id={card.id}
+            image={card.image}
+            nameCard={card.nameCard}
+            size={"(" + card.size + " cards)"}
+            onClickTopic={() => handleClick(id)}
+            to={`/topicCards/${card.nameCard}`}
+          ></TopicCardPattern>
         ))}
 
       {isTopicChosen && (

@@ -8,18 +8,10 @@ import TopicCard from "./components/topicCard/TopicCard";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          {/* <Route path="table" render={(props) => <Tabel {...props} />}></Route> */}
           <Route path="table" element={<Tabel />}></Route>
-          <Route
-            path="topicCard"
-            // path="topicCard"
-            // render={(props) => <TopicCard {...props} />}
-            element={<TopicCard />}
-          ></Route>
         </Route>
         <Route
           path="/404"

@@ -20,25 +20,6 @@ function App() {
     }
   };
 
-  // const [topicCards, setTopicCards] = useState(initCards);
-  // const [isTopicChosen, setIsTopicChosen] = useState(false); //слежу за выбрано/не выбрано
-  // const [chosenCardId, setChosenCardId] = useState(-1); //слежу за id топика
-
-  // const handleClick = (id) => {
-  //   setIsTopicChosen(true);
-  //   setChosenCardId(id);
-  //   topicCards[id].isChosen = true;
-  // };
-
-  // const [isButtonClick, setisButtonClick] = useState(false);
-  // const [isChosenTable, setisChosenTable] = useState(false);
-
-  // const showTable = () => {
-  //   // setisButtonClick(true);
-  //   // setisChosenTable(true);
-  //   setIsTable(!isTable);
-  // };
-
   return (
     <div className="App">
       <Header logo={logo}></Header>
@@ -46,34 +27,6 @@ function App() {
       <div className="topicCard-wrapper">
         <Outlet />
         {renderMainMenu()}
-        {/* {!isTopicChosen &&
-          topicCards.map((card, id) => (
-            <Link to="/topicCard">
-              <TopicCard
-                key={card.id}
-                id={card.id}
-                image={card.image}
-                nameCard={card.nameCard}
-                size={"(" + card.size + " cards)"}
-                isChosenTable={isChosenTable}
-                onClickTopic={() => handleClick(id)}
-                to={`/topicCards/${card.nameCard}`}
-              ></TopicCard>
-            </Link>
-          ))}
-
-        {isTopicChosen && (
-          <TopicCard
-            key={topicCards[chosenCardId].id}
-            image={topicCards[chosenCardId].image}
-            nameCard={topicCards[chosenCardId].nameCard}
-            size={"(" + topicCards[chosenCardId].size + " cards)"}
-            isChosen={topicCards[chosenCardId].isChosen}
-            onClickTopic={() => handleClick()}
-            // to={`/topicCards/${topicCards[chosenCardId].nameCard}`}
-          ></TopicCard>
-        )} */}
-        {/* {isButtonClick && <Table></Table>} */}
       </div>
       <Footer onClickButtonTable={() => setIsTable(!isTable)}></Footer>
     </div>

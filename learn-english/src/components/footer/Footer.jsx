@@ -7,14 +7,14 @@ import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 //import TopicCard from "../topicCard/TopicCard";
+import { browserHistory } from "react-router-dom";
 
-const Footer = (props, { history, location, match }) => {
-  //const Footer = (props) => {
+// const Footer = (props, { history, location, match }) => {
+const Footer = (props) => {
   // const {} = props;
   const openTable = () => {
-    if (props.onClickButtonTable()) {
-      history.push("/table");
-    }
+    props.onClickButtonTable();
+    // browserHistory.push("/table");
   };
 
   return (
@@ -81,7 +81,7 @@ const Footer = (props, { history, location, match }) => {
               </Link>
             </li>
             <li className="item-menu">
-              <Link className="item-menu" to="/topicCard">
+              <Link className="item-menu" to="/">
                 Topic_cards
               </Link>
             </li>
