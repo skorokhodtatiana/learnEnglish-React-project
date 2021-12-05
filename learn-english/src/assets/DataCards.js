@@ -1,7 +1,52 @@
 //import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHamburger,
+  faUserFriends,
+  faCat,
+  faSuitcaseRolling,
+  faBriefcase,
+  faTree,
+} from "@fortawesome/free-solid-svg-icons";
 
+const food = (
+  <FontAwesomeIcon
+    icon={faHamburger}
+    className={"topic-picture food-purple"}
+  ></FontAwesomeIcon>
+);
+const family = (
+  <FontAwesomeIcon
+    icon={faUserFriends}
+    className={"topic-picture family-red"}
+  ></FontAwesomeIcon>
+);
+const animal = (
+  <FontAwesomeIcon
+    icon={faCat}
+    className={"topic-picture animal-orange"}
+  ></FontAwesomeIcon>
+);
+const travel = (
+  <FontAwesomeIcon
+    icon={faSuitcaseRolling}
+    className={"topic-picture travel-yellow"}
+  ></FontAwesomeIcon>
+);
+const work = (
+  <FontAwesomeIcon
+    icon={faBriefcase}
+    className={"topic-picture work-green"}
+  ></FontAwesomeIcon>
+);
+const nature = (
+  <FontAwesomeIcon
+    icon={faTree}
+    className={"topic-picture nature-blue"}
+  ></FontAwesomeIcon>
+);
 // const [newArrData, setnewArrData] = useState(dataCards);
-const dataCards = [
+export const dataCards = [
   {
     id: 0,
     englishWord: "butterfly",
@@ -156,4 +201,55 @@ const dataCards = [
   },
 ];
 
-export default dataCards;
+export const initCards = [
+  {
+    id: 0,
+    image: food,
+    nameCard: "Food",
+    size: 5,
+    isChosen: false,
+    isChosenTable: false,
+  },
+  {
+    id: 1,
+    image: family,
+    nameCard: "Family",
+    size: 5,
+    isChosen: false,
+    isChosenTable: false,
+  },
+  {
+    id: 2,
+    image: animal,
+    nameCard: "Animals",
+    size: 7,
+    isChosen: false,
+    isChosenTable: false,
+  },
+  {
+    id: 3,
+    image: travel,
+    nameCard: "Travel",
+    size: 5,
+    isChosen: false,
+    isChosenTable: false,
+  },
+  {
+    id: 4,
+    image: work,
+    nameCard: "Work",
+    size: 5,
+    isChosen: false,
+    isChosenTable: false,
+  },
+  {
+    id: 5,
+    image: nature,
+    nameCard: "Nature",
+    size: 5,
+    isChosen: false,
+    isChosenTable: false,
+  },
+];
+
+// export default dataCards;

@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tabel from "./components/table/Table";
 import TopicCard from "./components/topicCard/TopicCard";
-import FlashCard from "./components/flashCard/FlashCard";
+//import FlashCard from "./components/flashCard/FlashCard";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,9 +13,12 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="table" element={<Tabel />}></Route>
-          <Route path="topicCard" render={(props) => <TopicCard {...props} />}>
-            {/* <Route path=":flashCardId" element={<FlashCard />}></Route> */}
-          </Route>
+          <Route
+            path="topicCard/:nameCard"
+            // path="topicCard"
+            // render={(props) => <TopicCard {...props} />}
+            element={<TopicCard />}
+          ></Route>
         </Route>
         <Route
           path="/404"

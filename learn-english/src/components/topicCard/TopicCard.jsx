@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import FlashCard from "../flashCard/FlashCard";
 import "./_topicCard.scss";
-import dataCards from "../../assets/DataCards.js";
+import { dataCards, initCards } from "../../assets/DataCards.js";
+import { Link } from "react-router-dom";
 
-const TopicCard = (props) => {
+const TopicCardPattern = (props) => {
   const { id, image, nameCard, size } = props;
 
   const openTopicCard = (id) => {
@@ -11,7 +12,7 @@ const TopicCard = (props) => {
   };
 
   const showTopicCards = props.isChosen ? "isNone" : " ";
-  const showTable = props.isChosenTable ? "isNone" : " ";
+  const tableVisible = props.isChosenTable ? "isNone" : " ";
 
   const arrTopic = dataCards.filter((word) => word.topic === props.nameCard);
 
@@ -26,7 +27,7 @@ const TopicCard = (props) => {
   };
 
   return (
-    <div className={"topicCard" + showTopicCards + showTable}>
+    <div className={"topicCard" + showTopicCards + tableVisible}>
       {props.isChosen ? (
         <div>
           <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
@@ -61,6 +62,7 @@ const TopicCard = (props) => {
           <div className="topicCard__picture">{image}</div>
           <div className={"topicCard__name textCard"}>{nameCard}</div>
           <div className="textCard">{size}</div>
+          {/* <Link to="topicCard/:nameCard"> */}
           <button
             id={id}
             onClick={() => {
@@ -70,64 +72,54 @@ const TopicCard = (props) => {
           >
             Open
           </button>
+          {/* </Link> */}
         </div>
       )}
     </div>
   );
 };
 
+const TopicCard = () => {
+  const [topicCards, setTopicCards] = useState(initCards);
+  const [isTopicChosen, setIsTopicChosen] = useState(false); //слежу за выбрано/не выбрано
+  const [chosenCardId, setChosenCardId] = useState(-1); //слежу за id топика
+
+  const handleClick = (id) => {
+    setIsTopicChosen(true);
+    setChosenCardId(id);
+    topicCards[id].isChosen = true;
+  };
+
+  return (
+    <div className="topicCard-wrapper">
+      {!isTopicChosen &&
+        topicCards.map((card, id) => (
+          <Link to="/topicCard" key={card.id}>
+            <TopicCardPattern
+              id={card.id}
+              image={card.image}
+              nameCard={card.nameCard}
+              size={"(" + card.size + " cards)"}
+              //isChosenTable={isChosenTable}
+              onClickTopic={() => handleClick(id)}
+              to={`/topicCards/${card.nameCard}`}
+            ></TopicCardPattern>
+          </Link>
+        ))}
+
+      {isTopicChosen && (
+        <TopicCardPattern
+          key={topicCards[chosenCardId].id}
+          image={topicCards[chosenCardId].image}
+          nameCard={topicCards[chosenCardId].nameCard}
+          size={"(" + topicCards[chosenCardId].size + " cards)"}
+          isChosen={topicCards[chosenCardId].isChosen}
+          onClickTopic={() => handleClick()}
+          to={`/topicCards/${topicCards[chosenCardId].nameCard}`}
+        ></TopicCardPattern>
+      )}
+    </div>
+  );
+};
+
 export default TopicCard;
-
-// const TopicCard = (props) => {
-//   const { id, image, nameCard, size } = props;
-
-//   const openTopicCard = (id) => {
-//     props.onClickTopic(id);
-//   };
-
-//   const showTopicCards = props.isChosen ? "isNone" : " ";
-//   const showTable = props.isChosenTable ? "isNone" : " ";
-
-//   // const classNameTopicCard = classNames("topicCard", {
-//   //   isNone: props.isChosenTable && props.isChosen,
-//   // });
-
-//   return (
-//     <div className={"topicCard" + showTopicCards + showTable}>
-//       {props.isChosen ? (
-//         <div>
-//           <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
-//           <div className="topicCard-wrapper">
-//             {dataCards
-//               .filter((word) => word.topic === props.nameCard)
-//               .map((animal, id) => (
-//                 <FlashCard
-//                   key={id}
-//                   englishWord={animal.englishWord}
-//                   transcription={animal.transcription}
-//                   translation={animal.translation}
-//                 ></FlashCard>
-//               ))}
-//           </div>
-//         </div>
-//       ) : (
-//         <div>
-//           <div className="topicCard__picture">{image}</div>
-//           <div className={"topicCard__name textCard"}>{nameCard}</div>
-//           <div className="textCard">{size}</div>
-//           <button
-//             id={id}
-//             onClick={() => {
-//               openTopicCard(id);
-//             }}
-//             className="topicCard__btnOpen"
-//           >
-//             Open
-//           </button>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default TopicCard;

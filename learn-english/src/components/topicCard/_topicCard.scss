@@ -97,10 +97,7 @@
 }
 
 .card-container {
-  position: relative;
-
   width: 24rem; //73rem
-  // height: 22rem;
   margin: auto;
   display: flex;
 }
@@ -108,4 +105,13 @@
   margin: auto;
   width: 1rem;
   margin-bottom: 2rem;
+}
+
+.topicCard-wrapper {
+  width: 79rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
 }

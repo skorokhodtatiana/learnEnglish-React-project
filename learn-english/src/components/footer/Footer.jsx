@@ -5,7 +5,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import TopicCard from "../topicCard/TopicCard";
 
 // const Footer = (props, { history, location, match }) => {
@@ -64,28 +64,31 @@ const Footer = (props) => {
             </a>
           </ul>
           <ul className="footer__links">
-            <a href="#top" className="item-menu">
-              About
-            </a>
-            {/* <li href="#top" className="item-menu"> */}
-            <Link className="item-menu" to="/table">
-              Flash_cards
-            </Link>
-            {/* </li> */}
-            <Link to="/404" className="item-menu">
-              Сooperation
-            </Link>
-            {/* <a href="#top" className="item-menu">
-              Сooperation
-            </a> */}
-            {/* <li href="#top" className="item-menu"> */}
-            <Link className="item-menu" to="/topicCard">
-              Topic_cards
-            </Link>
-            {/* </li> */}
-            <a href="#top" className="item-menu">
-              Contact
-            </a>
+            <li className="item-menu">
+              <Link className="item-menu" to="/404">
+                About
+              </Link>
+            </li>
+            <li className="item-menu">
+              <Link className="item-menu" to="/table">
+                Flash_cards
+              </Link>
+            </li>
+            <li className="item-menu">
+              <Link to="/404" className="item-menu">
+                Сooperation
+              </Link>
+            </li>
+            <li className="item-menu">
+              <Link className="item-menu" to="/topicCard/:nameCard">
+                Topic_cards
+              </Link>
+            </li>
+            <li className="item-menu">
+              <Link to="/404" className="item-menu">
+                Contact
+              </Link>
+            </li>
           </ul>
           <section className="footer__btn">
             <button onClick={() => openTable()} className="footer__btnSearch">

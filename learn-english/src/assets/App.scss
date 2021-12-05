@@ -12,42 +12,42 @@
   height: 100%;
   background-color: $customOrange;
 
-  .topicCard-wrapper {
-    width: 79rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  // .topicCard-wrapper {
+  //   width: 79rem;
+  //   display: flex;
+  //   flex-direction: row;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   margin: auto;
+
+  .topic-picture {
+    width: 6rem;
+    height: 6rem;
     margin: auto;
+  }
 
-    .topic-picture {
-      width: 6rem;
-      height: 6rem;
-      margin: auto;
-    }
+  .food-purple {
+    color: #6a438a;
+  }
 
-    .food-purple {
-      color: #6a438a;
-    }
+  .family-red {
+    color: #cd3939;
+  }
 
-    .family-red {
-      color: #cd3939;
-    }
+  .animal-orange {
+    color: #e36334;
+  }
 
-    .animal-orange {
-      color: #e36334;
-    }
+  .travel-yellow {
+    color: #c7bd5d;
+  }
 
-    .travel-yellow {
-      color: #c7bd5d;
-    }
+  .work-green {
+    color: #34945f;
+  }
 
-    .work-green {
-      color: #34945f;
-    }
-
-    .nature-blue {
-      color: #4d869a;
-    }
+  .nature-blue {
+    color: #4d869a;
+    // }
   }
 }
