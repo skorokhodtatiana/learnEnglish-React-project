@@ -8,12 +8,13 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 //import TopicCard from "../topicCard/TopicCard";
 
-// const Footer = (props, { history, location, match }) => {
-const Footer = (props) => {
+const Footer = (props, { history, location, match }) => {
+  //const Footer = (props) => {
   // const {} = props;
   const openTable = () => {
-    props.onClickButtonTable();
-    // history.push("table");
+    if (props.onClickButtonTable()) {
+      history.push("/table");
+    }
   };
 
   return (
@@ -80,7 +81,7 @@ const Footer = (props) => {
               </Link>
             </li>
             <li className="item-menu">
-              <Link className="item-menu" to="/topicCard/:nameCard">
+              <Link className="item-menu" to="/topicCard">
                 Topic_cards
               </Link>
             </li>
@@ -94,10 +95,8 @@ const Footer = (props) => {
             <button onClick={() => openTable()} className="footer__btnSearch">
               Browse or Search
             </button>
-            {/* <button className="footer__btnCreate">Create Flashcard</button> */}
           </section>
         </nav>
-        {/* <Outlet /> */}
       </div>
     </div>
   );

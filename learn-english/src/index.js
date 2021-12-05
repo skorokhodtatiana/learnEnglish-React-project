@@ -12,9 +12,10 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          {/* <Route path="table" render={(props) => <Tabel {...props} />}></Route> */}
           <Route path="table" element={<Tabel />}></Route>
           <Route
-            path="topicCard/:nameCard"
+            path="topicCard"
             // path="topicCard"
             // render={(props) => <TopicCard {...props} />}
             element={<TopicCard />}

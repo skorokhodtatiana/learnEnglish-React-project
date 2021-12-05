@@ -11,7 +11,7 @@ import Table from "./components/table/Table";
 import { initCards } from "./assets/DataCards";
 
 function App() {
-  const [isTable, setIsTable] = useState(true);
+  const [isTable, setIsTable] = useState(false);
   const renderMainMenu = () => {
     if (isTable) {
       return <Table />;
@@ -30,20 +30,21 @@ function App() {
   //   topicCards[id].isChosen = true;
   // };
 
-  const [isButtonClick, setisButtonClick] = useState(false);
-  const [isChosenTable, setisChosenTable] = useState(false);
+  // const [isButtonClick, setisButtonClick] = useState(false);
+  // const [isChosenTable, setisChosenTable] = useState(false);
 
-  const showTable = () => {
-    setisButtonClick(true);
-    setisChosenTable(true);
-  };
+  // const showTable = () => {
+  //   // setisButtonClick(true);
+  //   // setisChosenTable(true);
+  //   setIsTable(!isTable);
+  // };
 
   return (
     <div className="App">
       <Header logo={logo}></Header>
-      <Outlet />
 
       <div className="topicCard-wrapper">
+        <Outlet />
         {renderMainMenu()}
         {/* {!isTopicChosen &&
           topicCards.map((card, id) => (
@@ -72,9 +73,9 @@ function App() {
             // to={`/topicCards/${topicCards[chosenCardId].nameCard}`}
           ></TopicCard>
         )} */}
-        {isButtonClick && <Table></Table>}
+        {/* {isButtonClick && <Table></Table>} */}
       </div>
-      <Footer onClickButtonTable={() => showTable()}></Footer>
+      <Footer onClickButtonTable={() => setIsTable(!isTable)}></Footer>
     </div>
   );
 }
