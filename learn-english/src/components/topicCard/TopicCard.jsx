@@ -33,7 +33,7 @@ const TopicCardPattern = (props) => {
     // <div className={"topicCard" + showTopicCards + tableVisible}>
     // <div className="topicCard">
     <>
-      <div className="topicCard">
+      <div>
         {props.isChosen ? (
           <div>
             <h3 className="nameChoseTopic">Chosen topic is {nameCard}</h3>
@@ -64,7 +64,7 @@ const TopicCardPattern = (props) => {
             <div className="count">{index + 1 + "/" + arrTopic.length}</div>
           </div>
         ) : (
-          <div>
+          <div className="topicCard">
             <div className="topicCard__picture">{image}</div>
             <div className={"topicCard__name textCard"}>{nameCard}</div>
             <div className="textCard">{size}</div>
