@@ -12,6 +12,7 @@ import { initCards } from "./assets/DataCards";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tabel from "./components/table/Table";
 import Topic from "./components/topicCard/Topic";
+//import { TopicCardPattern } from "./components/topicCard/TopicCard";
 
 function App() {
   const [isTable, setIsTable] = useState(false);
@@ -30,13 +31,15 @@ function App() {
 
         <Routes>
           <Route exact path="table" element={<Tabel />}></Route>
-          <Route exact path="/" element={<TopicCard />}>
+          {/* <Route exact path="/" element={<TopicCard />}>
             <Route
               exact
               path="topicCard/:topicName"
               element={<Topic />}
             ></Route>
-          </Route>
+          </Route> */}
+          <Route exact path="/" element={<TopicCard />}></Route>
+          <Route exact path="topicCard/:topicName" element={<Topic />}></Route>
           <Route
             path="/404"
             element={
