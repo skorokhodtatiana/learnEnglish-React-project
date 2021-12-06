@@ -7,7 +7,6 @@ import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 //import TopicCard from "../topicCard/TopicCard";
-import { browserHistory } from "react-router-dom";
 
 // const Footer = (props, { history, location, match }) => {
 const Footer = (props) => {
@@ -92,9 +91,12 @@ const Footer = (props) => {
             </li>
           </ul>
           <section className="footer__btn">
-            <button onClick={() => openTable()} className="footer__btnSearch">
-              <Link to="/table"> Browse or Search</Link>
-            </button>
+            <Link className="link" to="/table">
+              <button onClick={() => openTable()} className="footer__btnSearch">
+                {" "}
+                Browse or Search
+              </button>
+            </Link>
           </section>
         </nav>
       </div>

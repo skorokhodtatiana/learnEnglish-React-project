@@ -149,10 +149,26 @@
         background-color: $customBeige;
         color: $customGray;
         border: 1px solid $customBeige;
-        border-radius: 5%;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px;
         margin-right: 1rem;
         font-family: "Source Code Pro", monospace;
         font-weight: bold;
+
+        &:hover {
+          background-color: rgb(160, 144, 119);
+          border: 1px solid rgb(160, 144, 119);
+          background-color: rgb(160, 144, 119);
+        }
+
+        &:active {
+          box-shadow: inset 1px 1px 10px -1px;
+        }
+      }
+
+      .link {
+        text-decoration: none;
+        color: $customGray;
       }
 
       .footer__btnCreate {

@@ -114,4 +114,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: auto;
+
+  .link {
+    text-decoration: none;
+    color: $customGray;
+  }
 }

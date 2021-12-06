@@ -12,27 +12,24 @@ export const TopicCardPattern = (props) => {
   };
 
   return (
-    <>
-      <div>
-        {
-          <div className="topicCard">
-            <div className="topicCard__picture">{image}</div>
-            <div className={"topicCard__name textCard"}>{nameCard}</div>
-            <div className="textCard">{size}</div>
-
-            <button
-              id={id}
-              onClick={() => {
-                openTopicCard(id);
-              }}
-              className="topicCard__btnOpen"
-            >
-              Open
-            </button>
-          </div>
-        }
-      </div>
-    </>
+    <div>
+      {
+        <div className="topicCard">
+          <div className="topicCard__picture">{image}</div>
+          <div className={"topicCard__name textCard"}>{nameCard}</div>
+          <div className="textCard">{size}</div>
+          <button
+            id={id}
+            onClick={() => {
+              openTopicCard(id);
+            }}
+            className="topicCard__btnOpen"
+          >
+            Open
+          </button>
+        </div>
+      }
+    </div>
   );
 };
 
@@ -51,7 +48,11 @@ const TopicCard = (props) => {
     <div className="topicCard-wrapper">
       {!isTopicChosen &&
         topicCards.map((card, id) => (
-          <Link to={`/topicCard/${card.nameCard}`} key={card.id}>
+          <Link
+            className="link"
+            to={`/topicCard/${card.nameCard}`}
+            key={card.id}
+          >
             <TopicCardPattern
               key={card.id}
               id={card.id}
@@ -71,7 +72,6 @@ const TopicCard = (props) => {
           size={"(" + topicCards[chosenCardId].size + " cards)"}
           isChosen={topicCards[chosenCardId].isChosen}
           onClickTopic={() => handleClick()}
-          // {props.match.params.topicName}
         ></TopicCardPattern>
       )}
       <Outlet />
