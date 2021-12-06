@@ -63,6 +63,7 @@ function App() {
               </main>
             }
           />
+          <Route exact path="topicCard/:topicName" element={<Topic />}></Route>
         </Routes>
 
         {/* <div className="topicCard-wrapper">
