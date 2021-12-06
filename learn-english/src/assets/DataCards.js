@@ -50,7 +50,7 @@ export const dataCards = [
   {
     id: 0,
     englishWord: "butterfly",
-    transcription: "[ ˈbʌtəflaɪ ]",
+    transcription: "[ˈbʌtəflaɪ]",
     translation: "бабочка",
     topic: "Animals",
     wordRu: false,
@@ -58,7 +58,7 @@ export const dataCards = [
   {
     id: 1,
     englishWord: "hedgehog",
-    transcription: "[ ˈhedʒhɒɡ ]",
+    transcription: "[ˈhedʒhɒɡ]",
     translation: "еж",
     topic: "Animals",
     wordRu: false,
@@ -74,7 +74,7 @@ export const dataCards = [
   {
     id: 3,
     englishWord: "cow",
-    transcription: " [kaʊ]",
+    transcription: "[kaʊ]",
     translation: "корова",
     topic: "Animals",
     wordRu: false,
@@ -106,7 +106,7 @@ export const dataCards = [
   {
     id: 7,
     englishWord: "nephew",
-    transcription: " [ˈnɛfju]",
+    transcription: "[ˈnɛfju]",
     translation: "племянник",
     topic: "Family",
     wordRu: false,
@@ -114,7 +114,7 @@ export const dataCards = [
   {
     id: 8,
     englishWord: "son",
-    transcription: " [sʌn]",
+    transcription: "[sʌn]",
     translation: "сын",
     topic: "Family",
     wordRu: false,
@@ -122,7 +122,7 @@ export const dataCards = [
   {
     id: 9,
     englishWord: "daughter",
-    transcription: " [ˈdɔːtə]",
+    transcription: "[ˈdɔːtə]",
     translation: "дочь",
     topic: "Family",
     wordRu: false,
@@ -130,7 +130,7 @@ export const dataCards = [
   {
     id: 10,
     englishWord: "apple",
-    transcription: " [aepl]",
+    transcription: "[aepl]",
     translation: "яблоко",
     topic: "Food",
     wordRu: false,
@@ -138,7 +138,7 @@ export const dataCards = [
   {
     id: 11,
     englishWord: "meat",
-    transcription: " [mi:t]",
+    transcription: "[mi:t]",
     translation: "мясо",
     topic: "Food",
     wordRu: false,
@@ -146,7 +146,7 @@ export const dataCards = [
   {
     id: 12,
     englishWord: "fish",
-    transcription: " [fɪʃ]",
+    transcription: "[fɪʃ]",
     translation: "рыба",
     topic: "Food",
     wordRu: false,
@@ -154,7 +154,7 @@ export const dataCards = [
   {
     id: 13,
     englishWord: "milk",
-    transcription: " [milk]",
+    transcription: "[milk]",
     translation: "молоко",
     topic: "Food",
     wordRu: false,
@@ -178,7 +178,7 @@ export const dataCards = [
   {
     id: 16,
     englishWord: "bread",
-    transcription: " [bred]",
+    transcription: "[bred]",
     translation: "хлеб",
     topic: "Food",
     wordRu: false,
@@ -194,9 +194,57 @@ export const dataCards = [
   {
     id: 18,
     englishWord: "sister",
-    transcription: " [ˈsɪstə]",
+    transcription: "[ˈsɪstə]",
     translation: "сестра",
     topic: "Family",
+    wordRu: false,
+  },
+  {
+    id: 19,
+    englishWord: "plane",
+    transcription: "[pleɪn]",
+    translation: "самолет",
+    topic: "Travel",
+    wordRu: false,
+  },
+  {
+    id: 20,
+    englishWord: "attractions",
+    transcription: "[əˈtrækʃn]",
+    translation: "достопримечательности",
+    topic: "Travel",
+    wordRu: false,
+  },
+  {
+    id: 21,
+    englishWord: "train",
+    transcription: "[treɪn]",
+    translation: "поезд",
+    topic: "Travel",
+    wordRu: false,
+  },
+  {
+    id: 22,
+    englishWord: "ticket",
+    transcription: "[ˈtɪkɪt]",
+    translation: "билет",
+    topic: "Travel",
+    wordRu: false,
+  },
+  {
+    id: 23,
+    englishWord: "job",
+    transcription: "[ʤəʊb]",
+    translation: "работа",
+    topic: "Work",
+    wordRu: false,
+  },
+  {
+    id: 22,
+    englishWord: "tree",
+    transcription: "[triː]",
+    translation: "дерево",
+    topic: "Nature",
     wordRu: false,
   },
 ];
