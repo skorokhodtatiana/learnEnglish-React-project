@@ -166,11 +166,6 @@
         }
       }
 
-      .link {
-        text-decoration: none;
-        color: $customGray;
-      }
-
       .footer__btnCreate {
         width: 10rem;
         height: 3rem;
@@ -184,4 +179,9 @@
       }
     }
   }
+}
+
+.link {
+  text-decoration: none;
+  color: $customGray;
 }

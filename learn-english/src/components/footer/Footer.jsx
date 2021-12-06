@@ -39,29 +39,36 @@ const Footer = (props) => {
         </header>
         <nav className="footer__nav">
           <ul className="footer__wrapper-cards">
-            {/* <li className={"footer__card card-food"}>
-              <Link to="/" className={"footer__card card-food"}>
+            <li className={"footer__card card-food"}>
+              <Link to="/topicCard/Food" className="link">
                 Food
               </Link>
-            </li> */}
-            <a href="#top" className={"footer__card card-food"}>
-              Food
-            </a>
-            <a href="#top" className={"footer__card card-family"}>
-              Family
-            </a>
-            <a href="#top" className={"footer__card card-animal"}>
-              Animals
-            </a>
-            <a href="#top" className={"footer__card card-travel"}>
-              Travel
-            </a>
-            <a href="#top" className={"footer__card card-work"}>
-              Work
-            </a>
-            <a href="#top" className={"footer__card card-nature"}>
-              Nature
-            </a>
+            </li>
+            <li className={"footer__card card-family"}>
+              <Link to="/topicCard/Family" className="link">
+                Family{" "}
+              </Link>
+            </li>
+            <li className={"footer__card card-animal"}>
+              <Link to="/topicCard/Animals" className="link">
+                Animals
+              </Link>
+            </li>
+            <li className={"footer__card card-travel"}>
+              <Link to="/topicCard/Travel" className="link">
+                Travel
+              </Link>
+            </li>
+            <li className={"footer__card card-work"}>
+              <Link to="/topicCard/Work" className="link">
+                Work
+              </Link>
+            </li>
+            <li href="#top" className={"footer__card card-nature"}>
+              <Link to="/topicCard/Work" className="link">
+                Nature
+              </Link>
+            </li>
           </ul>
           <ul className="footer__links">
             <li className="item-menu">
