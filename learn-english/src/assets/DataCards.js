@@ -240,7 +240,7 @@ export const dataCards = [
     wordRu: false,
   },
   {
-    id: 22,
+    id: 24,
     englishWord: "tree",
     transcription: "[triː]",
     translation: "дерево",

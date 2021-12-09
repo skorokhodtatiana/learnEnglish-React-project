@@ -5,7 +5,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 //import TopicCard from "../topicCard/TopicCard";
 
 // const Footer = (props, { history, location, match }) => {
@@ -40,70 +40,70 @@ const Footer = (props) => {
         <nav className="footer__nav">
           <ul className="footer__wrapper-cards">
             <li className={"footer__card card-food"}>
-              <Link to="/topicCard/Food" className="link">
+              <NavLink to="/topicCard/Food" className="link">
                 Food
-              </Link>
+              </NavLink>
             </li>
             <li className={"footer__card card-family"}>
-              <Link to="/topicCard/Family" className="link">
+              <NavLink to="/topicCard/Family" className="link">
                 Family{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className={"footer__card card-animal"}>
-              <Link to="/topicCard/Animals" className="link">
+              <NavLink to="/topicCard/Animals" className="link">
                 Animals
-              </Link>
+              </NavLink>
             </li>
             <li className={"footer__card card-travel"}>
-              <Link to="/topicCard/Travel" className="link">
+              <NavLink to="/topicCard/Travel" className="link">
                 Travel
-              </Link>
+              </NavLink>
             </li>
             <li className={"footer__card card-work"}>
-              <Link to="/topicCard/Work" className="link">
+              <NavLink to="/topicCard/Work" className="link">
                 Work
-              </Link>
+              </NavLink>
             </li>
             <li href="#top" className={"footer__card card-nature"}>
-              <Link to="/topicCard/Work" className="link">
+              <NavLink to="/topicCard/Nature" className="link">
                 Nature
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <ul className="footer__links">
             <li className="item-menu">
-              <Link className="item-menu" to="/404">
+              <NavLink className="item-menu" to="/*">
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="item-menu">
-              <Link className="item-menu" to="/table">
+              <NavLink className="item-menu" to="/table">
                 Flash_cards
-              </Link>
+              </NavLink>
             </li>
             <li className="item-menu">
-              <Link to="/404" className="item-menu">
+              <NavLink to="/*" className="item-menu">
                 Сooperation
-              </Link>
+              </NavLink>
             </li>
             <li className="item-menu">
-              <Link className="item-menu" to="/">
+              <NavLink className="item-menu" to="/">
                 Topic_cards
-              </Link>
+              </NavLink>
             </li>
             <li className="item-menu">
-              <Link to="/404" className="item-menu">
+              <NavLink to="/*" className="item-menu">
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <section className="footer__btn">
-            <Link className="link" to="/table">
+            <NavLink className="link" to="/table">
               <button onClick={() => openTable()} className="footer__btnSearch">
                 {" "}
                 Browse or Search
               </button>
-            </Link>
+            </NavLink>
           </section>
         </nav>
       </div>
