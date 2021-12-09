@@ -8,7 +8,6 @@ import React, { useState } from "react";
 import Footer from "./components/footer/Footer";
 
 import Table from "./components/table/Table";
-import { initCards } from "./assets/DataCards";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tabel from "./components/table/Table";
 import Topic from "./components/topicCard/Topic";
@@ -31,24 +30,8 @@ function App() {
 
         <Routes>
           <Route exact path="table" element={<Tabel />}></Route>
-          {/* <Route exact path="/" element={<TopicCard />}>
-            <Route
-              exact
-              path="topicCard/:topicName"
-              element={<Topic />}
-            ></Route>
-          </Route> */}
           <Route exact path="/" element={<TopicCard />}></Route>
           <Route exact path="topicCard/:topicName" element={<Topic />}></Route>
-          <Route
-            path="/404"
-            element={
-              <main style={{ textAlign: "center", fontSize: "4rem" }}>
-                <h1>404</h1>
-                <h3>Not found</h3>
-              </main>
-            }
-          ></Route>
           <Route
             path="*"
             element={
@@ -59,17 +42,13 @@ function App() {
                   fontSize: "3rem",
                 }}
               >
-                <p>There's nothing here!</p>
+                <h1>404</h1>
+                <h3>Not found</h3>
               </main>
             }
           />
           <Route exact path="topicCard/:topicName" element={<Topic />}></Route>
         </Routes>
-
-        {/* <div className="topicCard-wrapper">
-        <Outlet />
-        {renderMainMenu()}
-      </div> */}
 
         <Footer onClickButtonTable={() => setIsTable(!isTable)}></Footer>
       </BrowserRouter>
