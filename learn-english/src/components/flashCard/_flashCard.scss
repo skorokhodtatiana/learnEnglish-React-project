@@ -31,6 +31,10 @@
     border: 1px solid $customOrange;
     border-radius: 8%;
     background-color: $customOrange;
+
+    &:focus {
+      border: 1px solid yellow !important;
+    }
   }
 
   .fleshCard__russianhWord {
