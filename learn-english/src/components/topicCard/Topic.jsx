@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import FlashCard from "../flashCard/FlashCard";
 import { dataCards } from "../../assets/DataCards";
-import { useState } from "react";
+//import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function Topic(props) {
   let params = useParams();
@@ -17,6 +18,10 @@ export default function Topic(props) {
   const slideRight = () => {
     setIndex(index + 1);
   };
+
+  const ref = useRef();
+  useEffect(() => ref.current.focus(), []);
+
   return (
     <>
       <h2 className="nameChoseTopic">Topic card is {params.topicName}</h2>;
@@ -34,6 +39,7 @@ export default function Topic(props) {
               transcription={arrTopic[index].transcription}
               translation={arrTopic[index].translation}
               wordRu={arrTopic[index].wordRu}
+              ref={ref}
             />
             {index < arrTopic.length - 1 && (
               <button
