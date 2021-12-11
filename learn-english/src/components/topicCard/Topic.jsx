@@ -24,9 +24,17 @@ export default function Topic(props) {
     ref.current.focus();
   }, [index]);
 
+  const [count, setcount] = useState(0);
+  const addOneCard = () => {
+    setcount(count + 1);
+    console.log(count);
+    console.log("test");
+  };
+
   return (
     <>
       <h2 className="nameChoseTopic">Topic card is {params.topicName}</h2>;
+      <p className="numberCard">Выучено слов: {count}</p>
       <div>
         <div className="topicCard-wrapper">
           <div className="card-container">
@@ -41,6 +49,7 @@ export default function Topic(props) {
               transcription={arrTopic[index].transcription}
               translation={arrTopic[index].translation}
               wordRu={arrTopic[index].wordRu}
+              addOneCard={addOneCard}
               ref={ref}
             />
             {index < arrTopic.length - 1 && (

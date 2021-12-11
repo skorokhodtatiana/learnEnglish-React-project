@@ -5,8 +5,10 @@ import "./_flashCard.scss";
 const FlashCard = React.forwardRef((props, ref) => {
   const { englishWord, transcription, translation, wordRu } = props;
   const [pressed, setPressed] = useState(wordRu);
+
   const handlePressed = () => {
     setPressed(true);
+    props.addOneCard();
   };
 
   return (

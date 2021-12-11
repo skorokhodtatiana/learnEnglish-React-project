@@ -33,7 +33,7 @@
     background-color: $customOrange;
 
     &:focus {
-      border: 1px solid yellow !important;
+      outline: 1px solid yellow;
     }
   }
 
