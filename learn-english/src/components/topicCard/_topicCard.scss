@@ -63,17 +63,9 @@
   font-size: 1rem;
 }
 
-// .topicCard-wrapper {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   // margin: auto;
-// }
 .btnStep {
   height: 3rem;
   width: 3rem;
-  // margin: auto;
   border: 1px solid $customOrange;
   border-radius: 50%;
   align-self: center;
@@ -85,6 +77,14 @@
   &:active {
     background-color: green;
   }
+}
+
+.btnStepDisabled {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid $customOrange;
+  border-radius: 50%;
+  align-self: center;
 }
 
 .prevCard {

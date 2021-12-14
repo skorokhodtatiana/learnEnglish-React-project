@@ -35,8 +35,12 @@ export default function Topic(props) {
       <div>
         <div className="topicCard-wrapper">
           <div className="card-container">
-            {index > 0 && (
+            {index > 0 ? (
               <button onClick={() => slideLeft()} className="btnStep">
+                &larr;
+              </button>
+            ) : (
+              <button disabled className="btnStepDisabled">
                 &larr;
               </button>
             )}
@@ -49,11 +53,15 @@ export default function Topic(props) {
               addOneCard={addOneCard}
               ref={ref}
             />
-            {index < arrTopic.length - 1 && (
+            {index < arrTopic.length - 1 ? (
               <button
                 onClick={() => slideRight(arrTopic[index])}
                 className="btnStep"
               >
+                &rarr;
+              </button>
+            ) : (
+              <button disabled className="btnStepDisabled">
                 &rarr;
               </button>
             )}
