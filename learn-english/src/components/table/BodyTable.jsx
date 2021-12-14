@@ -8,7 +8,7 @@ const BodyTable = (props) => {
 
   const [selectEdit, setselectEdit] = useState(false);
   const handleClickEdit = () => {
-    setselectEdit(!false);
+    setselectEdit(true);
   };
   const [changeInputEngWord, setchangeInputEngWord] = useState(englishWord);
   const [changeInputTranscription, setchangeInputTranscription] =
@@ -16,30 +16,30 @@ const BodyTable = (props) => {
   const [changeInputRus, setchangeInputRus] = useState(translation);
   const [changeInputTopic, setchangeInputTopic] = useState(topic);
 
-  const saveChanges = () => {
-    const newWord = {
-      id: dataCards.length,
-      englishWord: changeInputEngWord,
-      transcription: changeInputTranscription,
-      translation: changeInputRus,
-      topic: changeInputTopic,
-    };
+  const saveChanges = (id) => {
+    console.log(id);
 
-    const newArr = [...dataCards];
-    newArr.push(newWord);
+    const newArr = dataCards.map((item) =>
+      item.id === id
+        ? {
+            ...item,
+            englishWord: changeInputEngWord,
+            transcription: changeInputTranscription,
+            translation: changeInputRus,
+          }
+        : item
+    );
+
     props.updateEditWord(newArr);
-    //handleDelete();
+    setselectEdit(false);
   };
 
   const cancelChanges = () => {
     setselectEdit(false);
   };
 
-  // const [oldListCards, setoldListCards] = useState(dataCards);
-
   const handleDelete = () => {
     let newListCards = dataCards.filter((el) => el.id !== id);
-    // setoldListCards(oldListCards);
     props.updateDataAfterDelete(newListCards);
   };
 
@@ -83,7 +83,7 @@ const BodyTable = (props) => {
         ></input>
       </td>
       <td>
-        <button onClick={() => saveChanges()}>Save</button>
+        <button onClick={() => saveChanges(id)}>Save</button>
         <button onClick={() => cancelChanges()}>Cancel change</button>
       </td>
     </tr>
@@ -95,7 +95,7 @@ const BodyTable = (props) => {
       <td>{translation}</td>
       <td>{topic}</td>
       <td>
-        <button onClick={handleClickEdit} className="button">
+        <button onClick={() => handleClickEdit()} className="button">
           <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
         </button>
         <button value={id} onClick={() => handleDelete()} className="button">

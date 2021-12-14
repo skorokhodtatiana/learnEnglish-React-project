@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import FlashCard from "../flashCard/FlashCard";
 import { dataCards } from "../../assets/DataCards";
-//import { useState } from "react";
 import React, { useState, useRef, useEffect } from "react";
 
 export default function Topic(props) {
@@ -10,11 +9,9 @@ export default function Topic(props) {
   const arrTopic = dataCards.filter((word) => word.topic === params.topicName);
 
   const [index, setIndex] = useState(0);
-
   const slideLeft = () => {
     setIndex(index - 1);
   };
-
   const slideRight = () => {
     setIndex(index + 1);
   };

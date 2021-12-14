@@ -1,19 +1,14 @@
 import "./_footer.scss";
 import logo from "../../assets/images/logo.png";
 import React from "react";
-//import { BrowserRouter as Routes, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Link } from "react-router-dom";
-//import TopicCard from "../topicCard/TopicCard";
 
-// const Footer = (props, { history, location, match }) => {
 const Footer = (props) => {
-  // const {} = props;
   const openTable = () => {
     props.onClickButtonTable();
-    // browserHistory.push("/table");
   };
 
   return (

@@ -6,11 +6,9 @@ import { Outlet } from "react-router-dom";
 
 export const TopicCardPattern = (props) => {
   const { id, image, nameCard, size } = props;
-
   const openTopicCard = (id) => {
     props.onClickTopic(id);
   };
-
   return (
     <div>
       {
