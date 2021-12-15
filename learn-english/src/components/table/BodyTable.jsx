@@ -16,6 +16,13 @@ const BodyTable = (props) => {
   const [changeInputRus, setchangeInputRus] = useState(translation);
   const [changeInputTopic, setchangeInputTopic] = useState(topic);
 
+  const [isFilledEng, setisFilledEng] = useState("borderGreen");
+  const [isFilledTranscr, setisFilledTranscr] = useState("borderGreen");
+  const [isFilledRus, setisFilledRus] = useState("borderGreen");
+  const [isFilledTopic, setisFilledTopic] = useState("borderGreen");
+
+  const [disabledSave, setdisabledSave] = useState(false);
+
   const saveChanges = (id) => {
     console.log(id);
 
@@ -26,6 +33,7 @@ const BodyTable = (props) => {
             englishWord: changeInputEngWord,
             transcription: changeInputTranscription,
             translation: changeInputRus,
+            topic: changeInputTopic,
           }
         : item
     );
@@ -43,47 +51,90 @@ const BodyTable = (props) => {
     props.updateDataAfterDelete(newListCards);
   };
 
+  const onChangeInputEng = (e) => {
+    setchangeInputEngWord(e.target.value);
+    e.target.value === ""
+      ? setisFilledEng("borderPink") && setdisabledSave(true)
+      : setisFilledEng("borderGreen");
+    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
+  };
+
+  const onChangeInputTransciption = (e) => {
+    setchangeInputTranscription(e.target.value);
+    e.target.value === ""
+      ? setisFilledTranscr("borderPink") && setdisabledSave(true)
+      : setisFilledTranscr("borderGreen");
+    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
+  };
+
+  const onChangeInputRus = (e) => {
+    setchangeInputRus(e.target.value);
+    e.target.value === ""
+      ? setisFilledRus("borderPink")
+      : setisFilledRus("borderGreen");
+    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
+  };
+
+  const onChangeInputTopic = (e) => {
+    setchangeInputTopic(e.target.value);
+    e.target.value === ""
+      ? setisFilledTopic("borderPink")
+      : setisFilledTopic("borderGreen");
+    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
+  };
+
   return selectEdit ? (
     <tr>
       <td>{id}</td>
       <td>
         <input
           type="text"
-          name="value"
+          className={isFilledEng}
+          name="englishWord"
           placeholder={englishWord}
           value={changeInputEngWord}
-          onChange={(eng) => setchangeInputEngWord(eng.target.value)}
+          onChange={(e) => onChangeInputEng(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
-          name="value"
+          className={isFilledTranscr}
+          name="transcription"
           placeholder={transcription}
           value={changeInputTranscription}
-          onChange={(tr) => setchangeInputTranscription(tr.target.value)}
+          onChange={(e) => onChangeInputTransciption(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
-          name="value"
+          className={isFilledRus}
+          name="translation"
           placeholder={translation}
           value={changeInputRus}
-          onChange={(rus) => setchangeInputRus(rus.target.value)}
+          onChange={(e) => onChangeInputRus(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
+          className={isFilledTopic}
           name="value"
           placeholder={topic}
           value={changeInputTopic}
-          onChange={(top) => setchangeInputTopic(top.target.value)}
+          onChange={(e) => onChangeInputTopic(e)}
         ></input>
       </td>
       <td>
-        <button onClick={() => saveChanges(id)}>Save</button>
+        {disabledSave ? (
+          <button disabled onClick={() => saveChanges(id)}>
+            Save
+          </button>
+        ) : (
+          <button onClick={() => saveChanges(id)}>Save</button>
+        )}
+
         <button onClick={() => cancelChanges()}>Cancel change</button>
       </td>
     </tr>

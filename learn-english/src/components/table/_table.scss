@@ -32,3 +32,17 @@
     }
   }
 }
+
+.inputTable {
+  &:active {
+    border: 3px solid yellow;
+  }
+}
+
+.borderGreen {
+  border: 3px solid green;
+}
+
+.borderPink {
+  border: 3px solid rgb(211, 35, 202);
+}
