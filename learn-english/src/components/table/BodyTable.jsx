@@ -10,36 +10,20 @@ const BodyTable = (props) => {
   const handleClickEdit = () => {
     setselectEdit(true);
   };
-  const [changeInputEngWord, setchangeInputEngWord] = useState(englishWord);
-  const [changeInputTranscription, setchangeInputTranscription] =
-    useState(transcription);
-  const [changeInputRus, setchangeInputRus] = useState(translation);
-  const [changeInputTopic, setchangeInputTopic] = useState(topic);
 
-  const [isFilledEng, setisFilledEng] = useState("borderGreen");
-  const [isFilledTranscr, setisFilledTranscr] = useState("borderGreen");
-  const [isFilledRus, setisFilledRus] = useState("borderGreen");
-  const [isFilledTopic, setisFilledTopic] = useState("borderGreen");
+  const [inputs, setInputs] = useState({
+    englishWord: englishWord,
+    transcription: transcription,
+    translation: translation,
+    topic: topic,
+  });
 
   const [disabledSave, setdisabledSave] = useState(false);
+  const [isFilled, setisFilled] = useState("borderGreen");
 
-  const saveChanges = (id) => {
-    console.log(id);
-
-    const newArr = dataCards.map((item) =>
-      item.id === id
-        ? {
-            ...item,
-            englishWord: changeInputEngWord,
-            transcription: changeInputTranscription,
-            translation: changeInputRus,
-            topic: changeInputTopic,
-          }
-        : item
-    );
-
-    props.updateEditWord(newArr);
-    setselectEdit(false);
+  const onChangeInput = (e) => {
+    setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value }));
+    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
   };
 
   const cancelChanges = () => {
@@ -51,36 +35,21 @@ const BodyTable = (props) => {
     props.updateDataAfterDelete(newListCards);
   };
 
-  const onChangeInputEng = (e) => {
-    setchangeInputEngWord(e.target.value);
-    e.target.value === ""
-      ? setisFilledEng("borderPink") && setdisabledSave(true)
-      : setisFilledEng("borderGreen");
-    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
-  };
+  const saveChanges = (id) => {
+    const newArr = dataCards.map((item) =>
+      item.id === id
+        ? {
+            ...item,
+            englishWord: inputs.englishWord,
+            transcription: inputs.transcription,
+            translation: inputs.translation,
+            topic: inputs.topic,
+          }
+        : item
+    );
 
-  const onChangeInputTransciption = (e) => {
-    setchangeInputTranscription(e.target.value);
-    e.target.value === ""
-      ? setisFilledTranscr("borderPink") && setdisabledSave(true)
-      : setisFilledTranscr("borderGreen");
-    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
-  };
-
-  const onChangeInputRus = (e) => {
-    setchangeInputRus(e.target.value);
-    e.target.value === ""
-      ? setisFilledRus("borderPink")
-      : setisFilledRus("borderGreen");
-    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
-  };
-
-  const onChangeInputTopic = (e) => {
-    setchangeInputTopic(e.target.value);
-    e.target.value === ""
-      ? setisFilledTopic("borderPink")
-      : setisFilledTopic("borderGreen");
-    e.target.value === "" ? setdisabledSave(true) : setdisabledSave(false);
+    props.updateEditWord(newArr);
+    setselectEdit(false);
   };
 
   return selectEdit ? (
@@ -89,41 +58,47 @@ const BodyTable = (props) => {
       <td>
         <input
           type="text"
-          className={isFilledEng}
+          className={
+            inputs.englishWord.length < 1 ? "borderPink" : "borderGreen"
+          }
           name="englishWord"
           placeholder={englishWord}
-          value={changeInputEngWord}
-          onChange={(e) => onChangeInputEng(e)}
+          value={inputs.englishWord}
+          onChange={(e) => onChangeInput(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
-          className={isFilledTranscr}
+          className={
+            inputs.transcription.length < 1 ? "borderPink" : "borderGreen"
+          }
           name="transcription"
           placeholder={transcription}
-          value={changeInputTranscription}
-          onChange={(e) => onChangeInputTransciption(e)}
+          value={inputs.transcription}
+          onChange={(e) => onChangeInput(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
-          className={isFilledRus}
+          className={
+            inputs.translation.length < 1 ? "borderPink" : "borderGreen"
+          }
           name="translation"
           placeholder={translation}
-          value={changeInputRus}
-          onChange={(e) => onChangeInputRus(e)}
+          value={inputs.translation}
+          onChange={(e) => onChangeInput(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
-          className={isFilledTopic}
-          name="value"
+          className={inputs.topic.length < 1 ? "borderPink" : "borderGreen"}
+          name="topic"
           placeholder={topic}
-          value={changeInputTopic}
-          onChange={(e) => onChangeInputTopic(e)}
+          value={inputs.topic}
+          onChange={(e) => onChangeInput(e)}
         ></input>
       </td>
       <td>
