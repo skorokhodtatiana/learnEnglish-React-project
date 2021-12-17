@@ -2,67 +2,99 @@ import { useState } from "react";
 import { dataCards } from "../../assets/DataCards.js";
 
 const NewWord = (props) => {
-  const [newEnglishWord, letnewEnglishWord] = useState("");
-  const [transcription, lettranscription] = useState("");
-  const [translation, lettranslation] = useState("");
-  const [topic, lettopic] = useState("");
+  const [disabledSave, setdisabledSave] = useState(true);
 
-  const saveNewWord = () => {
+  const [words, letwords] = useState({
+    newEnglishWord: "",
+    newTranscriptionWord: "",
+    newTranslationWord: "",
+    newTopicWord: "",
+  });
+
+  const createNewWord = (e) => {
+    letwords((words) => ({
+      ...words,
+      [e.target.name]: e.target.value,
+    }));
+    console.log({ [e.target.name]: e.target.value });
+    e.target.value < 1 ? setdisabledSave(true) : setdisabledSave(false);
+  };
+
+  const saveNewWord = (e) => {
     const newCard = {
       id: dataCards.length,
-      englishWord: newEnglishWord,
-      transcription: transcription,
-      translation: translation,
-      topic: topic,
+      englishWord: words.newEnglishWord,
+      transcription: words.newTranscriptionWord,
+      translation: words.newTranslationWord,
+      topic: words.newTopicWord,
     };
-    letnewEnglishWord(" ");
-    lettranscription(" ");
-    lettranslation(" ");
-    lettopic(" ");
+
+    (words.newEnglishWord === "" ||
+      words.newTranscriptionWord === "" ||
+      words.newTranslationWord === "" ||
+      words.newTopicWord === "") &&
+      alert("Заполните все поля!");
 
     const newArr = [...dataCards];
     newArr.push(newCard);
     props.updateNewWord(newArr);
+    letwords({
+      newEnglishWord: "",
+      newTranscriptionWord: "",
+      newTranslationWord: "",
+      newTopicWord: "",
+    });
   };
+
   return (
     <tr>
       <td></td>
       <td>
         <input
           type="text"
+          name="newEnglishWord"
           placeholder="new english word"
-          value={newEnglishWord}
-          onChange={(e) => letnewEnglishWord(e.target.value)}
+          value={words.newEnglishWord}
+          onChange={(e) => createNewWord(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
+          name="newTranscriptionWord"
           placeholder="transcription"
-          value={transcription}
-          onChange={(e) => lettranscription(e.target.value)}
+          value={words.newTranscriptionWord}
+          onChange={(e) => createNewWord(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
+          name="newTranslationWord"
           placeholder="translation"
-          value={translation}
-          onChange={(e) => lettranslation(e.target.value)}
+          value={words.newTranslationWord}
+          onChange={(e) => createNewWord(e)}
         ></input>
       </td>
       <td>
         <input
           type="text"
+          name="newTopicWord"
           placeholder="topic"
-          value={topic}
-          onChange={(e) => lettopic(e.target.value)}
+          value={words.newTopicWord}
+          onChange={(e) => createNewWord(e)}
         ></input>
       </td>
       <td>
-        <button type="submit" onClick={saveNewWord}>
-          Save
-        </button>
+        {disabledSave ? (
+          <button disabled type="submit" onClick={saveNewWord}>
+            Save
+          </button>
+        ) : (
+          <button type="submit" onClick={saveNewWord}>
+            Save
+          </button>
+        )}
       </td>
     </tr>
   );
