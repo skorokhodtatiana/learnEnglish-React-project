@@ -19,7 +19,6 @@ const BodyTable = (props) => {
   });
 
   const [disabledSave, setdisabledSave] = useState(false);
-  const [isFilled, setisFilled] = useState("borderGreen");
 
   const onChangeInput = (e) => {
     setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value }));
