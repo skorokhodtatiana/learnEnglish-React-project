@@ -17,7 +17,9 @@ const NewWord = (props) => {
       [e.target.name]: e.target.value,
     }));
     console.log({ [e.target.name]: e.target.value });
-    e.target.value < 1 ? setdisabledSave(true) : setdisabledSave(false);
+    e.target.value.length === ""
+      ? setdisabledSave(true)
+      : setdisabledSave(false);
   };
 
   const saveNewWord = (e) => {
@@ -52,6 +54,9 @@ const NewWord = (props) => {
       <td>
         <input
           type="text"
+          className={
+            words.newEnglishWord.length < 1 ? "borderPink" : "borderGreen"
+          }
           name="newEnglishWord"
           placeholder="new english word"
           value={words.newEnglishWord}
@@ -61,6 +66,9 @@ const NewWord = (props) => {
       <td>
         <input
           type="text"
+          className={
+            words.newTranscriptionWord.length < 1 ? "borderPink" : "borderGreen"
+          }
           name="newTranscriptionWord"
           placeholder="transcription"
           value={words.newTranscriptionWord}
@@ -70,6 +78,9 @@ const NewWord = (props) => {
       <td>
         <input
           type="text"
+          className={
+            words.newTranslationWord.length < 1 ? "borderPink" : "borderGreen"
+          }
           name="newTranslationWord"
           placeholder="translation"
           value={words.newTranslationWord}
@@ -79,6 +90,9 @@ const NewWord = (props) => {
       <td>
         <input
           type="text"
+          className={
+            words.newTopicWord.length < 1 ? "borderPink" : "borderGreen"
+          }
           name="newTopicWord"
           placeholder="topic"
           value={words.newTopicWord}

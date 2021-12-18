@@ -54,6 +54,7 @@ export const dataCards = [
     translation: "бабочка",
     topic: "Animals",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 1,
@@ -62,6 +63,7 @@ export const dataCards = [
     translation: "еж",
     topic: "Animals",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 2,
@@ -70,6 +72,7 @@ export const dataCards = [
     translation: "единорог",
     topic: "Animals",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 3,
@@ -78,6 +81,7 @@ export const dataCards = [
     translation: "корова",
     topic: "Animals",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 4,
@@ -86,6 +90,7 @@ export const dataCards = [
     translation: "тигр",
     topic: "Animals",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 5,
@@ -94,6 +99,7 @@ export const dataCards = [
     translation: "мама",
     topic: "Family",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 6,
@@ -102,6 +108,7 @@ export const dataCards = [
     translation: "папа",
     topic: "Family",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 7,
@@ -110,6 +117,7 @@ export const dataCards = [
     translation: "племянник",
     topic: "Family",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 8,
@@ -118,6 +126,7 @@ export const dataCards = [
     translation: "сын",
     topic: "Family",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 9,
@@ -126,6 +135,7 @@ export const dataCards = [
     translation: "дочь",
     topic: "Family",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 10,
@@ -134,6 +144,7 @@ export const dataCards = [
     translation: "яблоко",
     topic: "Food",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 11,
@@ -142,6 +153,7 @@ export const dataCards = [
     translation: "мясо",
     topic: "Food",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 12,
@@ -150,6 +162,7 @@ export const dataCards = [
     translation: "рыба",
     topic: "Food",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 13,
@@ -158,6 +171,7 @@ export const dataCards = [
     translation: "молоко",
     topic: "Food",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 14,
@@ -166,6 +180,7 @@ export const dataCards = [
     translation: "собака",
     topic: "Animals",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 15,
@@ -174,6 +189,7 @@ export const dataCards = [
     translation: "динозавр",
     topic: "Animals",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 16,
@@ -182,6 +198,7 @@ export const dataCards = [
     translation: "хлеб",
     topic: "Food",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 17,
@@ -190,6 +207,7 @@ export const dataCards = [
     translation: "дядя",
     topic: "Family",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 18,
@@ -198,6 +216,7 @@ export const dataCards = [
     translation: "сестра",
     topic: "Family",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 19,
@@ -206,6 +225,7 @@ export const dataCards = [
     translation: "самолет",
     topic: "Travel",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 20,
@@ -214,6 +234,7 @@ export const dataCards = [
     translation: "достопримечательности",
     topic: "Travel",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 21,
@@ -222,6 +243,7 @@ export const dataCards = [
     translation: "поезд",
     topic: "Travel",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 22,
@@ -230,6 +252,7 @@ export const dataCards = [
     translation: "билет",
     topic: "Travel",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 23,
@@ -238,6 +261,7 @@ export const dataCards = [
     translation: "работа",
     topic: "Work",
     wordRu: false,
+    isLearnWord: false,
   },
   {
     id: 24,
@@ -246,6 +270,7 @@ export const dataCards = [
     translation: "дерево",
     topic: "Nature",
     wordRu: false,
+    isLearnWord: false,
   },
 ];
 
