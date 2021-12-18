@@ -22,13 +22,13 @@ export default function Topic(props) {
   }, [index]);
 
   const [count, setcount] = useState(0);
-  const [countWord, setcountWord] = useState(true);
+  const [modifiedTopicArr, setcountWord] = useState(arrTopic);
 
   const addOneCard = () => {
-    if (!arrTopic[index].isChosenTable) {
+    if (!arrTopic[index].isLearnWord) {
       setcount(count + 1);
     }
-    arrTopic[index].isChosenTable = true;
+    modifiedTopicArr[index].isLearnWord = true;
   };
 
   return (
