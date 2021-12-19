@@ -57,9 +57,7 @@ const BodyTable = (props) => {
       <td>
         <input
           type="text"
-          className={
-            inputs.englishWord.length < 1 ? "borderPink" : "borderGreen"
-          }
+          className={inputs.englishWord === "" ? "borderPink" : "borderGreen"}
           name="englishWord"
           placeholder={englishWord}
           value={inputs.englishWord}
@@ -69,9 +67,7 @@ const BodyTable = (props) => {
       <td>
         <input
           type="text"
-          className={
-            inputs.transcription.length < 1 ? "borderPink" : "borderGreen"
-          }
+          className={inputs.transcription === "" ? "borderPink" : "borderGreen"}
           name="transcription"
           placeholder={transcription}
           value={inputs.transcription}
@@ -81,9 +77,7 @@ const BodyTable = (props) => {
       <td>
         <input
           type="text"
-          className={
-            inputs.translation.length < 1 ? "borderPink" : "borderGreen"
-          }
+          className={inputs.translation === "" ? "borderPink" : "borderGreen"}
           name="translation"
           placeholder={translation}
           value={inputs.translation}
@@ -93,7 +87,7 @@ const BodyTable = (props) => {
       <td>
         <input
           type="text"
-          className={inputs.topic.length < 1 ? "borderPink" : "borderGreen"}
+          className={inputs.topic === "" ? "borderPink" : "borderGreen"}
           name="topic"
           placeholder={topic}
           value={inputs.topic}

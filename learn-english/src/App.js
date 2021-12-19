@@ -7,7 +7,7 @@ import React, { useState } from "react";
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 
-import Table from "./components/table/Table";
+//import Table from "./components/table/Table";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tabel from "./components/table/Table";
 import Topic from "./components/topicCard/Topic";
@@ -15,13 +15,13 @@ import Topic from "./components/topicCard/Topic";
 
 function App() {
   const [isTable, setIsTable] = useState(false);
-  const renderMainMenu = () => {
-    if (isTable) {
-      return <Table />;
-    } else {
-      return <TopicCard />;
-    }
-  };
+  // const renderMainMenu = () => {
+  //   if (isTable) {
+  //     return <Table />;
+  //   } else {
+  //     return <TopicCard />;
+  //   }
+  // };
 
   return (
     <div className="App">

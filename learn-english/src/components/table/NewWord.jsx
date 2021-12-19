@@ -16,8 +16,14 @@ const NewWord = (props) => {
       ...words,
       [e.target.name]: e.target.value,
     }));
-    console.log({ [e.target.name]: e.target.value });
-    e.target.value.length === ""
+
+    words.newEnglishWord === ""
+      ? setdisabledSave(true)
+      : setdisabledSave(false) || words.newTranscriptionWord === ""
+      ? setdisabledSave(true)
+      : setdisabledSave(false) || words.newTranslationWord === ""
+      ? setdisabledSave(true)
+      : setdisabledSave(false) || words.newTopicWord === ""
       ? setdisabledSave(true)
       : setdisabledSave(false);
   };
@@ -30,6 +36,7 @@ const NewWord = (props) => {
       translation: words.newTranslationWord,
       topic: words.newTopicWord,
     };
+    console.log(newCard);
 
     (words.newEnglishWord === "" ||
       words.newTranscriptionWord === "" ||
@@ -54,9 +61,7 @@ const NewWord = (props) => {
       <td>
         <input
           type="text"
-          className={
-            words.newEnglishWord.length < 1 ? "borderPink" : "borderGreen"
-          }
+          className={words.newEnglishWord === "" ? "borderPink" : "borderGreen"}
           name="newEnglishWord"
           placeholder="new english word"
           value={words.newEnglishWord}
@@ -67,7 +72,7 @@ const NewWord = (props) => {
         <input
           type="text"
           className={
-            words.newTranscriptionWord.length < 1 ? "borderPink" : "borderGreen"
+            words.newTranscriptionWord === "" ? "borderPink" : "borderGreen"
           }
           name="newTranscriptionWord"
           placeholder="transcription"
@@ -79,7 +84,7 @@ const NewWord = (props) => {
         <input
           type="text"
           className={
-            words.newTranslationWord.length < 1 ? "borderPink" : "borderGreen"
+            words.newTranslationWord === "" ? "borderPink" : "borderGreen"
           }
           name="newTranslationWord"
           placeholder="translation"
@@ -90,9 +95,7 @@ const NewWord = (props) => {
       <td>
         <input
           type="text"
-          className={
-            words.newTopicWord.length < 1 ? "borderPink" : "borderGreen"
-          }
+          className={words.newTopicWord === "" ? "borderPink" : "borderGreen"}
           name="newTopicWord"
           placeholder="topic"
           value={words.newTopicWord}
@@ -101,11 +104,11 @@ const NewWord = (props) => {
       </td>
       <td>
         {disabledSave ? (
-          <button disabled type="submit" onClick={saveNewWord}>
+          <button disabled type="submit" onClick={() => saveNewWord()}>
             Save
           </button>
         ) : (
-          <button type="submit" onClick={saveNewWord}>
+          <button type="submit" onClick={() => saveNewWord()}>
             Save
           </button>
         )}

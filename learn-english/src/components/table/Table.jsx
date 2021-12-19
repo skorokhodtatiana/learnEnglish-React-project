@@ -9,17 +9,14 @@ const Tabel = (props) => {
   const [newArrData, setnewArrData] = useState(dataCards);
 
   const updateDataAfterDelete = (newArr) => {
-    console.log("Работвет передача при удалении");
     setnewArrData(newArr);
   };
 
   const updateEditWord = (newArr) => {
-    console.log("Работвет передача при редактировании");
     setnewArrData(newArr);
   };
 
   const updateNewWord = (newArr) => {
-    console.log("Работвет передача с новым словом");
     setnewArrData(newArr);
   };
   return (
