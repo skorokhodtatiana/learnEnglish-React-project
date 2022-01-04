@@ -14,8 +14,10 @@ const NewWord = (props) => {
   const createNewWord = (e) => {
     letwords((words) => ({
       ...words,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value.toLowerCase(),
     }));
+
+    // if (e.target.name === "topic") e.target.value[0].toUpperCase();
 
     words.newEnglishWord === ""
       ? setdisabledSave(true)
